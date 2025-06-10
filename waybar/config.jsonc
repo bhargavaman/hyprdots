@@ -25,7 +25,8 @@
     "return-type": "json",
     "interval": 2400,
     "tooltip": true,
-    "on-click": "xdg-open https://github.com/ad1822"
+    "on-click": "xdg-open https://github.com/ad1822",
+    "on-click-right": "~/.config/waybar/scripts/weekly_commits"
   },
   "hyprland/window": {
     "format": "{initialClass}",

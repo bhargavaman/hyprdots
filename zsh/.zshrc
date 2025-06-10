@@ -25,12 +25,9 @@ zinit light zsh-users/zsh-history-substring-search
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-#zinit snippet OMZP::archLinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
-#zinit snippet OMZP::go
 zinit snippet OMZP::kubectx
-#zinit snippet OMZP::docker
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::terraform
 
@@ -59,6 +56,7 @@ cd_up() {
     cd ..
     zle reset-prompt
 }
+
 zle -N cd_up
 bindkey '^H' cd_up
 
@@ -86,9 +84,14 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+
+export FZF_TMUX=1
+# export FZF_TMUX_OPTS='-p 80%,60%'
+# export FZF_DEFAULT_OPTS="--height 100%  --border"
 
 # # Shell integrations
 eval "$(fzf --zsh)"
@@ -225,13 +228,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
-# fastfetch
-
-#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#    if tmux has-session -t default 2>/dev/null; then
-#        tmux new-window -t default
-#        tmux attach-session -t default
-#    else
-#        tmux new-session -s default
-#    fi
-#fi
+fastfetch
