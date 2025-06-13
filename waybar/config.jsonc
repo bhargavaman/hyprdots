@@ -21,12 +21,12 @@
     "battery"
   ],
   "custom/gh": {
-    "exec": "~/.config/waybar/scripts/weekly_commits",
+    "exec": "~/.config/waybar/scripts/weekly_commits DARK",
     "return-type": "json",
     "interval": 2400,
     "tooltip": true,
     "on-click": "xdg-open https://github.com/ad1822",
-    "on-click-right": "~/.config/waybar/scripts/weekly_commits"
+    "on-click-right": "~/.config/waybar/scripts/weekly_commits DARK"
   },
   "hyprland/window": {
     "format": "{initialClass}",

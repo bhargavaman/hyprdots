@@ -47,5 +47,4 @@ override.tf.json
 # General
 .DS_Store
 .env
-.env.*
 *.log

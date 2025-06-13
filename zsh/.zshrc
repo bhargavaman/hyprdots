@@ -141,7 +141,7 @@ alias ..='cd ..'
 alias ~='cd ~'
 
 edit() {
-    vim ~/.config/$1
+    code ~/.config/$1
 }
 
 cpcf() {
@@ -228,4 +228,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
-fastfetch
+nitch
