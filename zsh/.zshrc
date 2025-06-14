@@ -228,4 +228,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
+export GITHUB_TOKEN="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"
+# githubfetch.py ad1822 --ascii=block --heatmap
+
 nitch
