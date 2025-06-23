@@ -2,8 +2,9 @@
 
 * {
   font-family: JetBrains Mono Nerd Font;
-  min-height: 12px;
+  min-height: 14px;
   font-size: 12px;
+  border: none;
   border-radius: 6px;
   padding: 0;
   margin: 0;
@@ -11,9 +12,20 @@
   text-shadow: none;
   background-color: transparent;
 }
+
+#custom-gh {
+  color: #39d353;
+  background: @raisin-black;
+  border-radius: 6px;
+  margin-right: 2px;
+  padding: 0px 8px;
+}
+
+#custom-gh .empty {
+  color: #161b22;
+}
+
 window#waybar {
-  background: rgba(0, 0, 0, 0.65);
-  color: @beige;
   border-radius: 6px;
   padding: 2px;
   box-shadow: none;
@@ -21,25 +33,17 @@ window#waybar {
 
 #window {
   color: @text;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   padding: 6px;
   margin: 0px 2px;
 }
 
-#custom-cava {
-  color: #cba6f7;
-  border-left: 0px;
-  border-right: 0px;
-  padding: 6px;
-  font-family: 'bargraph';
-  background: @raisin-black;
-  margin: 0px 2px;
-}
+
 
 #cpu {
   color: @beige;
   padding: 0px 8px 0px 15px;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   margin-left: 2px;
   border-radius: 6px 0 0 6px;
 }
@@ -47,7 +51,7 @@ window#waybar {
 #memory {
   color: @beige;
   padding: 0px 15px 0px 8px;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   margin-right: 1px;
   border-radius: 0 6px 6px 0;
 }
@@ -56,7 +60,7 @@ window#waybar {
   padding: 0px 12px;
   margin-right: 2px;
   color: @celadon;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
@@ -65,20 +69,20 @@ tooltip,
 menu,
 #workspaces,
 #clock,
-#pulseaudio,
+#wireplumber,
 #backlight,
 #bluetooth,
 #network,
 #battery,
 #custom-power {
-  /* background: @raisin-black; */
+  background: @raisin-black;
   padding: 7px 8px;
   margin: 0;
   border-radius: 6px;
 }
 
 #workspaces {
-  /* background: @raisin-black; */
+  background: @raisin-black;
   margin: 0;
   margin-left: 3px;
   padding: 0;
@@ -132,19 +136,11 @@ menu,
   border-radius: 6px;
 }
 
-#custom-launcher {
-  font-size: 18px;
-  transition: none;
-  padding: 0px 10px;
-  margin-right: 2px;
-  /* background: @raisin-black; */
-  color: rgba(137, 220, 235, 1);
-  border-radius: 0 6px 6px 0;
-}
+
 
 #custom-transparency {
   font-size: 18px;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   color: #94e2d5;
   padding: 0px 10px;
   margin-right: 2px;
@@ -159,12 +155,12 @@ menu,
   padding: 0px 8px;
   margin-right: 1px;
   color: #f38ba8;
-  /* background: @raisin-black; */
+  background: @raisin-black;
   /* border-radius: 0 6px 6px 0; */
   border-radius: 6px;
 }
 
-#pulseaudio,
+#wireplumber,
 #backlight {
   padding: 0 8px;
   margin: 0 1px;
@@ -185,19 +181,13 @@ menu,
 }
 
 #network.speed {
-  /* background: @raisin-black; */
+  background: @raisin-black;
   padding: 0px 6px;
   min-width: 10px;
   color: @beige;
   border-radius: 6px;
 }
 
-#bluetooth {
-  min-width: 20px;
-  padding: 0 10px;
-  margin: 0 2px;
-  border-radius: 6px;
-}
 
 #network {
   min-width: 30px;
@@ -219,32 +209,32 @@ menu,
 }
 
 #battery.charging {
-  color: #33ae18; /* Text */
-  /* background: @raisin-black; */
+  color: #a6e3a1; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.good:not(.charging) {
-  color: #f8d589;
-  /* background: @raisin-black; */
+  color: #74c7ec;
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.warning:not(.charging) {
-  color: #e0a858; /* Text */
-  /* background: @raisin-black; */
+  color: #74c7ec; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.low:not(.charging) {
-  color: #d20f39; /* Text */
-  /* background: @raisin-black; */
+  color: #f38ba8; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.critical:not(.charging) {
-  color: #d20f39; /* Text */
-  /* background: @raisin-black; */
+  color: #f38ba8; /* Text */
+  background: @raisin-black;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -255,7 +245,7 @@ menu,
 
 @keyframes blink {
   to {
-    color: #d20f39; /* Red */
-    background: #eff1f5; /* Text */
+    color: #f38ba8; /* Red */
+    background: #f2cdcd; /* Text */
   }
 }

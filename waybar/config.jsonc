@@ -7,17 +7,14 @@
   "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
   "modules-center": ["clock"],
   "modules-right": [
-    // "custom/cava",
     "hyprland/window",
     "custom/gh",
     "temperature#gpu",
-    // "custom/update" ,
     "custom/transparency",
     "custom/wallpaper",
     "wireplumber",
     "backlight",
     "network",
-    // "bluetooth",
     "battery"
   ],
   "custom/gh": {
