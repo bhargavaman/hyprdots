@@ -149,7 +149,7 @@
     "return-type": "json"
   },
   "clock": {
-    "format": "{:%I:%M %p ☲ %a %d/%m}",
+    "format": "{:%H:%M | %a %d/%m}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>"
   },
