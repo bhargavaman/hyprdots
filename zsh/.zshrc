@@ -1,5 +1,6 @@
 export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 #export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin"
 export PATH=$PATH:/opt/kafka/bin
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -140,6 +141,7 @@ alias ....='cd ../..'
 alias ..='cd ..'
 alias ~='cd ~'
 
+# Edit Config files
 edit() {
     code ~/.config/$1
 }
@@ -157,12 +159,15 @@ cpcf() {
     fi
 }
 
+# For connecting google drive to local
 mount_gdrive() {
     rclone mount gdrive: ~/mnt/gdrive
 }
 
+# For opening repo in browser
 gh_open() {
-    xdg-open "https://github.com/ad1822/$1"
+    repo=$(basename $(pwd))
+    xdg-open "https://github.com/ad1822/$repo"
 }
 
 backup_dots(){
@@ -175,6 +180,7 @@ fcd(){
     dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
 }
 
+# Extract
 extract() {
     if [ -f "$1" ]; then
         case "$1" in
@@ -228,5 +234,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
-
-nitch
+# nitch
+fastfetch
