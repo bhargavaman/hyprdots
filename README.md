@@ -1,37 +1,20 @@
-<h1 align="center">Hyprdots - AWESOME Dotfiles for Hyprland</h1>
+<h1 align="center">🫟 Hyprdots: An Awesome Dotfiles</h1>
 
-<p align="center">
-<a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-abd6fd?style=for-the-badge" alt="Hyprland - A dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks" /></a>
-<a href="https://github.com/Alexays/Waybar"><img src="https://img.shields.io/badge/Waybar-cdd6f4?style=for-the-badge" alt="Waybar - Highly customizable Wayland bar for Sway and Wlroots based compositors" /></a>
-<a href="https://github.com/hyprwm/hyprlock"><img src="https://img.shields.io/badge/Hyprlock-89dceb?style=for-the-badge" alt="Hyprlock - Hyprland's GPU-accelerated screen locking utility" /></a>
-<a href="https://www.gnu.org/software/bash/manual/zsh.html"><img src="https://img.shields.io/badge/zsh-f2cdcd?style=for-the-badge" alt="Z Shell" /></a>
-<a href="https://github.com/kovidgoyal/kitty"><img src="https://img.shields.io/badge/Kitty-cba6f7?style=for-the-badge" alt="Kitty - Cross-platform, fast, feature-rich, GPU based terminal" /></a>
-<a href="https://github.com/lbonn/rofi"><img src="https://img.shields.io/badge/Rofi-fab387?style=for-the-badge" alt="Rofi - A window switcher, application launcher and dmenu replacement" /></a>
-<a href="https://github.com/sentriz/cliphist"><img src="https://img.shields.io/badge/Cliphist-cdd6f4?style=for-the-badge" alt="Cliphist - Wayland clipboard manager" /></a>
-<a href="https://github.com/pwmt/zathura"><img src="https://img.shields.io/badge/Zathura-94e2d5?style=for-the-badge" alt="Zathura is a highly customizable and functional document viewer" /></a>
-<a href="https://github.com/sddm/sddm"><img src="https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge" alt="Simple Desktop Display Manager" /></a>
-<a href="https://github.com/dunst-project/dunst"><img src="https://img.shields.io/badge/Dunst-fab387?style=for-the-badge" alt="Dunst - Lightweight and customizable notification daemon" /></a>
-<a href="https://github.com/tmux/tmux/"><img src="https://img.shields.io/badge/Tmux-a6e3a1?style=for-the-badge" alt="Terminal Multiplexer" /></a>
-
+<div align="center">
+<p>
+<a href="https://github.com/ad1822/hyprdots/stargazers"><img src="https://img.shields.io/github/stars/ad1822/hyprdots?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=C9CBFF&labelColor=302D41" alt="stars"><a>&nbsp;&nbsp;
+<!-- <a href="https://github.com/ad1822/hyprdots/"><img src="https://img.shields.io/github/repo-size/ad1822/hyprdots?style=for-the-badge&logo=hyprland&logoColor=f9e2af&label=Size&labelColor=302D41&color=f9e2af" alt="REPO SIZE"></a>&nbsp;&nbsp; -->
+<a href="https://github.com/ad1822/hyprdots/"><img src="https://img.shields.io/github/forks/ad1822/hyprdots?style=for-the-badge&logo=appveyor&logoColor=f9e2af&label=Forks&labelColor=302D41&color=f9e2af" alt="REPO SIZE"></a>&nbsp;&nbsp;
+<a href="https://github.com/ad1822/hyprdots/commits/main/"><img src="https://img.shields.io/github/last-commit/ad1822/hyprdots?style=for-the-badge&logo=github&logoColor=eba0ac&label=Last%20Commit&labelColor=302D41&color=eba0ac" alt="Last Commit"></a>&nbsp;&nbsp;
+<a href="https://github.com/ad1822/hyprdots/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ad1822/hyprdots?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>&nbsp;&nbsp;
 </p>
+</div>
 
-<p align="center">
-  <a href="https://github.com/ad1822/hyprdots/stars">
-    <img src="https://img.shields.io/github/stars/ad1822/hyprdots?style=for-the-badge&color=B4BEFE&labelColor=302D41&logo=starship&logoColor=B4BEFE" alt="Stars">
-  </a>
-  <a href="https://github.com/ad1822/hyprdots/forks">
-    <img src="https://img.shields.io/github/forks/ad1822/hyprdots?style=for-the-badge&color=F5C2E7&labelColor=302D41&logo=fork&logoColor=F5C2E7" alt="Forks">
-  </a>
-  <a href="https://github.com/ad1822/hyprdots/commits/main">
-    <img src="https://img.shields.io/github/last-commit/ad1822/hyprdots?style=for-the-badge&color=A6E3A1&labelColor=302D41&logo=github&logoColor=A6E3A1" alt="Last Commit">
-  </a>
-</p>
-
-<p align="center">
+<!-- <p align="center">
   <a href="https://github.com/zemmsoares/awesome-rices">
     <img src="https://raw.githubusercontent.com/zemmsoares/awesome-rices/main/assets/awesome-rice-badge.svg" alt="awesome-rice-badge">
   </a>
-</p>
+</p> -->
 
 <!-- ##### Home: -->
 
