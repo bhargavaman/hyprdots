@@ -53,10 +53,10 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
-# cd_up() {
-#     cd ..
-#     zle reset-prompt
-# }
+cd_up() {
+    cd ..
+    zle reset-prompt
+}
 
 # Open VSCode and Tmux with 4 pane with one command
 # Use : open <file-path/ empty/ .>
@@ -132,10 +132,7 @@ eval "$(starship init zsh)"
 
 alias vim='nvim'
 
-# Create a git repo from terminal
-gh-create(){
-    git init && gh repo create --private --source=. --remote=origin && git push -u --all && gh browse
-}
+alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 
 # Git add Alias
 add(){
