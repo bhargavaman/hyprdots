@@ -125,16 +125,16 @@ window#waybar {
 
 /* Github Heatmap */
 #custom-gh {
-  color: #39d353;
-  background: @raisin-black;
+  /* color: #39d353; */
+  /* background: @mantel; */
   border-radius: 6px;
   margin-right: 2px;
   padding: 0px 8px;
 }
 
-#custom-gh .empty {
+/* #custom-gh .empty {
   color: #161b22;
-}
+} */
 
 /* GPU or CPU Temp */
 #temperature.gpu {
