@@ -132,7 +132,10 @@ eval "$(starship init zsh)"
 
 alias vim='nvim'
 
-alias gh-create='git init && gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+# Create a git repo from terminal
+gh-create(){
+    git init && gh repo create --private --source=. --remote=origin && git push -u --all && gh browse
+}
 
 # Git add Alias
 add(){
