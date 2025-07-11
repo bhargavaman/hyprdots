@@ -78,7 +78,7 @@
 3. **Run the setup script**:
 
    ```sh
-   sudo bash ./setup.sh
+   bash ./setup.sh
    ```
 
 4. **GTK Theme Setup**:
