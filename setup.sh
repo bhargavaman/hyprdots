@@ -12,12 +12,21 @@ cat << EOF
 
 EOF
 
+if [ "$EUID" -eq 0 ]; then
+    echo "❌ Do not run this script as root or with sudo."
+    echo "Run it as your normal user. The script will ask for sudo when needed."
+    exit 1
+fi
 
+# Determine real home directory and script path
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIGS="cava kitty dunst fastfetch pacseek hypr hypridle rofi starship tmux waybar yazi"
+
 BACKUP_DIR="$HOME/.config_backup"
 LOCAL_BIN="$HOME/.local/bin"
 FONT_DIR="$HOME/.local/share/fonts"
 DOTS_DIR="$HOME/hyprdots"
+ZSHRC="$HOME/.zshrc"
 
 echo "==> Backing up existing config files..."
 mkdir -p "$BACKUP_DIR"
@@ -30,19 +39,21 @@ for dir in $CONFIGS; do
 done
 
 echo "==> Copying new config files..."
-cp -r $CONFIGS "$HOME/.config/"
+for dir in $CONFIGS; do
+    cp -r "$SCRIPT_DIR/$dir" "$HOME/.config/"
+done
 
 echo "==> Making Waybar and Rofi scripts executable..."
-chmod +x ~/.config/waybar/scripts/*
-chmod +x ~/.config/rofi/* || true
+[ -d "$HOME/.config/waybar/scripts" ] && chmod +x "$HOME/.config/waybar/scripts/"* || true
+[ -d "$HOME/.config/rofi" ] && chmod +x "$HOME/.config/rofi/"* || true
 
 echo "==> Copying binaries..."
 mkdir -p "$LOCAL_BIN"
-cp -r bin/* "$LOCAL_BIN"
-chmod +x "$LOCAL_BIN"/*
+[ -d "$SCRIPT_DIR/bin" ] && cp -r "$SCRIPT_DIR/bin/"* "$LOCAL_BIN"
+chmod +x "$LOCAL_BIN/"* || true
 
 echo "==> Copying .zshrc..."
-cp zsh/.zshrc "$HOME/.zshrc"
+cp "$SCRIPT_DIR/zsh/.zshrc" "$ZSHRC"
 
 echo "==> Making scripts executable..."
 chmod +x "$DOTS_DIR"/* || true
@@ -52,7 +63,7 @@ FA_DIR="$FONT_DIR/fontawesome"
 mkdir -p "$FA_DIR"
 
 echo "==> Installing Font Awesome (v5 & v6)..."
-if [[ ! -f "$FA_DIR/fa-brands-400.ttf" ]]; then
+if [[ ! -d "$FA_DIR" || -z "$(ls -A "$FA_DIR"/*.otf 2>/dev/null)" ]]; then
     wget -q https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip
     unzip -q fontawesome-free-6.7.2-desktop.zip
     mv fontawesome-free-6.7.2-desktop/otfs/*.otf "$FA_DIR/"
@@ -81,25 +92,30 @@ else
 fi
 
 echo "==> Refreshing font cache..."
-fc-cache -f -v
+fc-cache -f || echo "⚠️ Font cache update skipped or failed."
 
 echo -e "\n✅ Base setup completed successfully!"
 
 # Create wallpaper directory
 echo "==> Creating wallpaper directory..."
-mkdir -p ~/Pictures/Wallpaper
+mkdir -p "$HOME/Pictures/Wallpaper"
 
 # Install yay if not already installed
 if ! command -v yay &>/dev/null; then
     echo "==> Installing AUR package manager (yay)..."
     sudo pacman -S --needed git base-devel || { echo "❌ Failed to install base-devel"; exit 1; }
-    git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si || { echo "❌ yay installation failed"; exit 1; }
-    cd ~
+    
+    YAY_DIR=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$YAY_DIR"
+    cd "$YAY_DIR"
+    makepkg -si --noconfirm || { echo "❌ yay installation failed"; exit 1; }
+    cd -
+    rm -rf "$YAY_DIR"
 else
     echo "✔️ yay is already installed."
 fi
 
-# Install useful packages from pacman and AUR
+# Install useful packages from yay and pacman
 echo "==> Installing core packages..."
 yay -S --noconfirm \
 pacseek \
@@ -134,11 +150,10 @@ pamixer
 # Set zsh as default shell if not already
 if [[ "$SHELL" != "$(which zsh)" ]]; then
     echo "==> Changing default shell to zsh..."
-    chsh -s "$(which zsh)"
+    sudo chsh -s "$(which zsh)" "$USER"
 fi
 
-# Ensure Zsh plugins and tools are sourced in .zshrc
-ZSHRC="$HOME/.zshrc"
+# Ensure Zsh plugins and tools are sourced
 echo "==> Configuring Zsh plugins and tools..."
 {
     echo -e "\n# Zsh Plugins and Tools"
