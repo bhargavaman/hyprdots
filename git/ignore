@@ -28,9 +28,6 @@ vendor/
 *.out
 coverage.out
 
-# Go modules cache (optional if you vendor deps)
-go.sum
-go.mod
 
 # Terraform
 *.tfstate

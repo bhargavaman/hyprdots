@@ -24,7 +24,7 @@ menu,
 #network,
 #battery,
 #custom-power {
-  background: @base;
+  background: @mantle;
   padding: 7px 8px;
   margin: 0;
   border-radius: 6px;
@@ -32,7 +32,7 @@ menu,
 
 /* Workspace */
 #workspaces {
-  background: @base;
+  background: @mantle;
   margin: 0;
   margin-left: 3px;
   padding: 0;
@@ -44,7 +44,7 @@ menu,
 }
 
 #workspaces button {
-  padding: 0px 5px;
+  padding: 0px 3px;
   margin: 3px;
   border-radius: 6px;
   border: none;
@@ -66,7 +66,7 @@ menu,
   animation: none;
 }
 
-#workspaces button:not(.active) {
+/* #workspaces button:not(.active) {
   color: #74c7ec;
 }
 #workspaces button:nth-child(1):not(.active) {
@@ -77,13 +77,13 @@ menu,
 }
 #workspaces button:nth-child(3):not(.active) {
   color: #a6e3a1;
-}
+} */
 
 /* Cpu */
 #cpu {
   color: @text;
   padding: 0px 8px 0px 15px;
-  background: @base;
+  background: @mantle;
   margin-left: 2px;
   border-radius: 6px 0 0 6px;
 }
@@ -92,14 +92,14 @@ menu,
 #memory {
   color: @text;
   padding: 0px 15px 0px 8px;
-  background: @base;
+  background: @mantle;
   margin-right: 1px;
   border-radius: 0 6px 6px 0;
 }
 
 /* Network Speed */
 #network.speed {
-  background: @base;
+  background: @mantle;
   padding: 0px 6px;
   min-width: 10px;
   color: @text;
@@ -122,7 +122,7 @@ window#waybar {
 
 #window {
   color: @text;
-  background: @base;
+  background: @mantle;
   padding: 6px;
   margin: 0px 2px;
 }
@@ -130,7 +130,7 @@ window#waybar {
 /* Github Heatmap */
 #custom-gh {
   /* color: #39d353; */
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
   margin-right: 2px;
   padding: 0px 8px;
@@ -145,14 +145,14 @@ window#waybar {
   padding: 0px 12px;
   margin-right: 2px;
   color: @green;
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
 }
 
 /* Transparency */
 #custom-transparency {
   font-size: 18px;
-  background: @base;
+  background: @mantle;
   color: #94e2d5;
   padding: 0px 10px;
   margin-right: 2px;
@@ -168,7 +168,7 @@ window#waybar {
   padding: 0px 8px;
   margin-right: 1px;
   color: #f38ba8;
-  background: @base;
+  background: @mantle;
   /* border-radius: 0 6px 6px 0; */
   border-radius: 6px;
 }
@@ -212,31 +212,31 @@ window#waybar {
 
 #battery.charging {
   color: #a6e3a1; /* Text */
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
 }
 
 #battery.good:not(.charging) {
   color: #74c7ec;
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
 }
 
 #battery.warning:not(.charging) {
   color: #74c7ec; /* Text */
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
 }
 
 #battery.low:not(.charging) {
   color: #f38ba8; /* Text */
-  background: @base;
+  background: @mantle;
   border-radius: 6px;
 }
 
 #battery.critical:not(.charging) {
   color: #f38ba8; /* Text */
-  background: @base;
+  background: @mantle;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -259,7 +259,7 @@ window#waybar {
   border-right: 0px;
   padding: 6px;
   font-family: 'bargraph';
-  background: @base;
+  background: @mantle;
   margin: 0px 2px;
 }
 
@@ -268,7 +268,7 @@ window#waybar {
   transition: none;
   padding: 0px 10px;
   margin-right: 2px;
-  background: @base;
+  background: @mantle;
   color: rgba(137, 220, 235, 1);
   border-radius: 0 6px 6px 0;
 }

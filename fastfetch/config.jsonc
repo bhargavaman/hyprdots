@@ -5,8 +5,7 @@
     "padding": {
       "top": 1,
       "right": 5,
-      "left": 2,
-
+      "left": 2
     }
   },
   "display": {
@@ -73,11 +72,11 @@
       "type": "disk",
       "folders": "/"
     },
-    {
-      "type": "command",
-      "key": "             \u001b[11D{#34}󰉉 uptime",
-      "text" : "scrntime -d 1 --style 2 | head -n 1"
-    },
+    // {
+    //   "type": "command",
+    //   "key": "             \u001b[11D{#34}󰉉 uptime",
+    //   "text" : "scrntime -d 1 --style 2 | head -n 1"
+    // },
     // {
     //   "key": "             \u001b[11D{#35} memory",
     //   "type": "memory"

@@ -153,6 +153,16 @@ push(){
     git push
 }
 
+
+tag(){
+    git tag $1
+    git push origin $1
+}
+
+clear-local-branches(){
+    git branch --merged dev | grep -v '\*' | grep -v dev | xargs git branch -d
+}
+
 transCat(){
     tint --image "$1" --theme catppuccin
 }

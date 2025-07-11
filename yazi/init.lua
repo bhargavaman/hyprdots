@@ -195,5 +195,5 @@ require("yatline-githead"):setup({
 --- @since 25.2.26
 
 require("full-border"):setup({
-	type = ui.Border.ROUNDED,
+	type = ui.Border.Border,
 })
