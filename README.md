@@ -16,31 +16,24 @@
   </a>
 </p> -->
 
-<!-- ##### Home: -->
+![main](Assets/main-2.png)
 
-![home](Assets/main.png)
+![cava](Assets/obs-cava.png)
 
-<!-- ##### K9s and Cava: -->
+![launcher](Assets/new-launcher.png)
+![yazi](Assets/yazi-2.png)
+![vscode](Assets/vscode.png)
 
-<!-- ##### Yazi and Btop: -->
+![btop](Assets/new-btop.png)
 
-![btop](Assets/btop.png)
+<!-- ![player](Assets/player.png) -->
 
-<!-- ##### Powermenu: -->
+![player-2](Assets/player-2.png)
+![powermenu](Assets/powermenu-2.png)
 
-![powermenu](Assets/powermenu.png)
+## Wallpapers (Google Drive)
 
-<!-- ##### GoLang Showcase : -->
-
-![powermenu](Assets/yazi.png)
-
-<!-- ##### Launcher: -->
-
-![launcher](Assets/launcher.png)
-
-## Wallpaper
-
-[Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
+[Wallpapers](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
 
 ---
 
