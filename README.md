@@ -21,20 +21,12 @@
 </div>
 
 <div align="center">
-  <img src="Assets/powermenu.png" alt="powermenu" width="49%"/>
   <img src="Assets/new-launcher.png" alt="launcher" width="49%"/>
+  <img src="Assets/powermenu.png" alt="powermenu" width="49%"/>
 </div>
 
 <div align="center">
-  <img src="Assets/yazi-2.png" alt="yazi" width="100%"/>
-</div>
-
-<div align="center">
-  <img src="Assets/vscode.png" alt="vscode" width="100%"/>
-</div>
-
-<div align="center">
-  <img src="Assets/new-btop.png" alt="btop" width="100%"/>
+  <img src="Assets/obs-cava.png" alt="cava" width="100%"/>
 </div>
 
 <div align="center">
@@ -42,7 +34,15 @@
 </div>
 
 <div align="center">
-  <img src="Assets/obs-cava.png" alt="cava" width="100%"/>
+  <img src="Assets/new-btop.png" alt="btop" width="100%"/>
+</div>
+
+<div align="center">
+  <img src="Assets/vscode.png" alt="vscode" width="100%"/>
+</div>
+
+<div align="center">
+  <img src="Assets/yazi-2.png" alt="yazi" width="100%"/>
 </div>
 
 ## Wallpapers (Google Drive)
