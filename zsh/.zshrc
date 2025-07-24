@@ -163,8 +163,8 @@ clear-local-branches(){
     git branch --merged dev | grep -v '\*' | grep -v dev | xargs git branch -d
 }
 
-transCat(){
-    tint --image "$1" --theme catppuccin
+wall(){
+    gowall convert ~/Pictures/Wallpaper/$1 -t mocha
 }
 
 # Create a file and directly make it executable like a script
