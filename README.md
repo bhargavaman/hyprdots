@@ -1,4 +1,4 @@
-<h1 align="center">🫟 Hyprdots: An Awesome Dotfiles</h1>
+<h1 align="center">🫟 Hyprdots</h1>
 
 <div align="center">
 <p>
@@ -10,6 +10,9 @@
 </p>
 </div>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
+</p>
 <!-- <p align="center">
   <a href="https://github.com/zemmsoares/awesome-rices">
     <img src="https://raw.githubusercontent.com/zemmsoares/awesome-rices/main/assets/awesome-rice-badge.svg" alt="awesome-rice-badge">
@@ -116,3 +119,7 @@
 > - Fonts and themes will be installed system-wide in your `~/.local/share/fonts` directory.
 
 ---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
+</p>
