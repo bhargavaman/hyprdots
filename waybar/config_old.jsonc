@@ -36,11 +36,11 @@
       "(.*) Thunar": "Thunar",
       "(.*)obs(.*)": "OBS",
       "Spotify (.*)": "Spotify",
-      "discord(.*)": " Discord",
+      "discord(.*)": "Discord",
       "Code": "VS Code",
       "Docker Desktop": " Docker",
       "kitty": "Kitty",
-      "app.zen_browser.zen": "Zen"
+      "zen": "Zen"
     },
     "on-click-middle": "pkill waybar && hyprctl dispatch exec waybar"
   },

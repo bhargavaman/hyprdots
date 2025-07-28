@@ -33,7 +33,7 @@
       "(.*) Thunar": "Thunar",
       "(.*)obs(.*)": "OBS",
       "Spotify (.*)": "Spotify",
-      "discord(.*)": " Discord",
+      "discord(.*)": "Discord",
       "Code": "VS Code",
       "Docker Desktop": " Docker",
       "kitty": "Kitty",

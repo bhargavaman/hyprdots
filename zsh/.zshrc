@@ -179,7 +179,7 @@ gh-visibility() {
 
 alias kls='kubectl get all'
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
-alias ls='eza -l --icons --level=0 --tree --sort=Name'
+alias ls='eza -l --icons --level=1 --tree --sort=Name'
 alias search='eval "~/.local/bin/search.sh"'
 alias cod='code .'
 
@@ -297,3 +297,11 @@ alias todocli='~/.todo/todo_cli.sh'
 
 # nitch
 fastfetch
+
+# Zsh Plugins and Tools
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
+eval "$(starship init zsh)"

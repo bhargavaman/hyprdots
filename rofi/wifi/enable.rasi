@@ -71,7 +71,7 @@ listview {
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    
+
     spacing:                     0px;
     margin: 			 28px 24px;
     border-radius: 		 8px;

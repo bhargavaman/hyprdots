@@ -1,87 +1,105 @@
 #!/usr/bin/env bash
 
-notify-send -t 3000 -i info " 󰤨  Checking For Wifi"
+set -euo pipefail
 
-# Check if wifi is on
-check_wifi_on=$( nmcli --field WIFI g | sed 1d | sed 's/ //g' )
+# Notify user about the script launch
+notify-send -t 3000 -i info "   Checking for Wi-Fi..."
 
-# Get the SSID of the connected wifi network
-connected_wifi=$( nmcli -t -f active,ssid device wifi | grep -i 'yes' | sed 's/yes://g' )
+# Menu: Enable Wi-Fi
+enable_wifi_menu() {
+    echo -e "Enable Wi-Fi" | rofi -dmenu -theme "$ENABLE_THEME"
+}
 
-# Get the list of all avalaible wifi network
-wifi_list=$( nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed -E "s/WPA*.?//g"| sed "s/802.1X//g" | sed "s/^--/ /g" | sed "s/ //g" | sed "/--/d" | sed "s/   */   /g" | sed 's/[[:space:]]*$//' )
 
-# Generate the string to pass on
-if [ -z "$connected_wifi" ] ; then
-	string_to_pass=""
+# Paths to Rofi themes
+LIST_THEME="$HOME/.config/rofi/wifi/list.rasi"
+ENABLE_THEME="$HOME/.config/rofi/wifi/enable.rasi"
+SSID_THEME="$HOME/.config/rofi/wifi/ssid.rasi"
+PASSWORD_THEME="$HOME/.config/rofi/wifi/password.rasi"
+
+# Check Wi-Fi status
+wifi_status=$(nmcli -t -f WIFI general | tail -n1)
+echo $wifi_status
+
+if [[ "$wifi_status" == "disabled" ]]; then
+    choice=$(enable_wifi_menu)
+  	nmcli radio wifi on
+fi
+
+# Get currently connected SSID
+connected_ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2-)
+
+# Get available Wi-Fi networks
+wifi_list=$(nmcli -t -f ssid,security dev wifi | awk -F: '
+{
+    icon = ($2 ~ /WPA|WEP|802\.1X/) ? "" : "";
+    if ($1 != "") {
+        printf "%s   %s\n", icon, $1
+    }
+}' | sort -u)
+
+# Compose connection status
+if [[ -n "$connected_ssid" ]]; then
+    connection_status="   Connected to $connected_ssid\n"
 else
-	string_to_pass="   Connected to ${connected_wifi}\n"
+    connection_status=""
 fi
 
 
-# Rofi skeleton for enable
-enable_menu() {
-	rofi -markup-rows -dmenu -theme "$HOME/.config/rofi/wifi/enable.rasi"
+# Menu: List Wi-Fi Networks
+list_wifi_menu() {
+    echo -e "   Disable Wi-Fi\n${connection_status}   Manual Setup\n${wifi_list}" | rofi -markup-rows -dmenu -theme "$LIST_THEME"
 }
 
-# Rofi skeleton for list
-list_menu() {
-	rofi -markup-rows -dmenu -theme "$HOME/.config/rofi/wifi/list.rasi"
+# Prompt for SSID
+prompt_ssid() {
+    rofi -dmenu -p "SSID" -theme "$SSID_THEME"
 }
 
-
-# Rofi menu for wifi enable
-enable_wifi() {
-	echo -e "󰤨   Enable Wifi" | enable_menu
+# Prompt for password
+prompt_password() {
+    rofi -dmenu -p "Password" -theme "$PASSWORD_THEME"
 }
 
-# Rofi menu for the wifi list
-list_wifi() {
-	echo -e "󰤭   Disable Wifi\n${string_to_pass}   Manual Setup\n${wifi_list}" | list_menu
-}
-
-# Rofi menu for the details of the active connection
-show_details() {
-	rofi -e "${details}"
-}
-
-# Rofi menu for the ssid
-take_ssid() {
-	ssid=$( echo "" | rofi -dmenu -p "${choice}" -theme "$HOME/.config/rofi/wifi/ssid.rasi" )
-}
-
-# Rofi menu for the password
-take_password() {
-	password=$( echo "" | rofi -dmenu -p "${choice}" -theme "$HOME/.config/rofi/wifi/password.rasi" )
-}
-
-# Show the menu accordingly
-if [ "$check_wifi_on" == "enabled" ] ; then 
-	choice=$(list_wifi)
+# Main interaction
+if [[ "$wifi_status" == "enabled" ]]; then
+    choice=$(list_wifi_menu)
 else
-	choice=$(enable_wifi)
+    choice=$(enable_wifi_menu)
+  	nmcli radio wifi on
 fi
 
+# Strip leading icons/spaces
+choice=$(echo "$choice" | sed -E 's/^[^a-zA-Z0-9]+//')
 
-# Remove the junk from the string
-choice="${choice:4}"
+echo $choice
 
-# Perform tasks based on the choice
-if [ "$choice" == "Enable Wifi" ] ; then
-	nmcli radio wifi on
-elif [ "$choice" == "Disable Wifi" ] ; then
-	nmcli radio wifi off
-elif [ "$choice" == "Manual Setup" ] ; then
-	take_ssid
-	if [[ "$ssid" != "" ]] ; then
-		take_password	
-		nmcli device wifi connect "$ssid" hidden yes password "$password"
-	fi
-elif [[ $choice =~ "Connected to" ]] ; then
-	kitty -e sh -c "nmcli dev wifi show-password; read -p 'Press Return to close...'"
-elif [[ $choice != "" ]] ; then	
-	take_password
-	nmcli device wifi connect "$choice" password "$password"
-fi
+case "$choice" in
+    "Enable Wi-Fi")
+        nmcli radio wifi on
+        ;;
 
+    "Disable Wi-Fi")
+        nmcli radio wifi off
+        ;;
 
+    "Manual Setup")
+        ssid=$(prompt_ssid)
+        [[ -z "$ssid" ]] && exit 0
+        password=$(prompt_password)
+        nmcli dev wifi connect "$ssid" hidden yes password "$password"
+        ;;
+
+    "Connected to"*)
+        kitty -e sh -c "nmcli dev wifi show-password; read -p 'Press Return to close...'"
+        ;;
+
+    "")
+        exit 0
+        ;;
+
+    *)
+        password=$(prompt_password)
+        nmcli dev wifi connect "$choice" password "$password"
+        ;;
+esac
