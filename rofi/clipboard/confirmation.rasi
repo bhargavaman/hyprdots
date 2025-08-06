@@ -5,7 +5,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "JetBrainsMono Nerd Font Mono Bold 12";
+    font:                        "JetBrains Mono Nerd Font 10";
     background:                  #11111b;
     selected:                    #cba6f7;
     active:                      #716251;
