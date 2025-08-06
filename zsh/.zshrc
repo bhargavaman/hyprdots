@@ -144,6 +144,7 @@ add(){
 
 # Git Commit
 # I have a custom script
+
 commit(){
     bash ~/work/main/dotsh/gh/commit
 }
@@ -164,7 +165,7 @@ clear-local-branches(){
 }
 
 wall(){
-    gowall convert ~/Pictures/Wallpaper/$1 -t mocha
+    gowall convert ~/Pictures/Wallpaper/$1 -t catppuccin
 }
 
 # Create a file and directly make it executable like a script
@@ -283,9 +284,9 @@ music() {
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 complete -C '/usr/bin/aws_completer' aws
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="${KREW_ROOT:-
 
 #fortune | cowsay
 
@@ -296,12 +297,4 @@ alias todocli='~/.todo/todo_cli.sh'
 # githubfetch.py ad1822 --ascii=block --heatmap
 
 # nitch
-fastfetch
-
-# Zsh Plugins and Tools
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-eval "$(zoxide init zsh)"
-eval "$(atuin init zsh)"
-eval "$(starship init zsh)"
+# fastfetch

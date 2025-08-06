@@ -1,126 +1,138 @@
+format = """
+$username\
+[@](fg:#94e2d5)$hostname\
+$directory\
+$git_branch\
+$git_status\
+$time\
+$character\
+"""
 
-[buf]
-symbol = " "
+right_format = """
+$cmd_duration (fg:bold yellow)\
+$golang\
+$nodejs\
+$python\
+$docker_context\
+$battery\
+"""
+# $memory_usage\
 
-[c]
-symbol = " "
+[character]
+success_symbol = '[ ~>](fg:#89b4fa)'
+error_symbol = '[ ~>](bold red)'
+vimcmd_symbol = '[ <~](bold green)'
+vimcmd_replace_symbol = '[<~](bold green)'
+vimcmd_visual_symbol = '[V](bold yellow)'
 
-[cmake]
-symbol = " "
 
-[conda]
-symbol = " "
+[cmd_duration]
+min_time = 500
+format = 'takes (bold yellow)[$duration](bold yellow)'
 
-[crystal]
-symbol = " "
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = ''
+style = 'bold dimmed green'
 
-[dart]
-symbol = " "
+[battery]
+disabled = false
+format = " [$symbol$percentage ]($style)"
+full_symbol = "󰁹 "
+discharging_symbol = "󰂃 "
+charging_symbol = "󰂄 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+
+[[battery.display]]
+threshold = 70
+style = "fg:#f9e2af"
+
+[username]
+show_always = true
+style_user = "fg:#a6e3a1"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "fg:#f5c2e7"
+format = "[$hostname]($style)"
+disabled = false
+aliases = { "arch" = "arch" }
 
 [directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
+style = "fg:#94e2d5"
+format = " [$path]($style)"
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+use_logical_path = true
 
 [git_branch]
-symbol = " "
+symbol = " 󰘬"
+style = "fg:#f9e2af"
+format = "[$symbol $branch]($style)"
 
-[git_commit]
-tag_symbol = '  '
+[git_status]
+style = "fg:#f9e2af"
+format = '([\($all_status$ahead_behind\)]($style))'
 
 [golang]
 symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
+style = "fg:#94e2d5"
+format = "[ $symbol($version)]($style)"
 
 [nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
-
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
+symbol = ""
+style = "fg:#a6e3a1"
+format = "[ $symbol ($version)]($style)"
 
 [python]
-symbol = " "
+symbol = ""
+style = "fg:#89dceb"
+format = "[ $symbol ($version)]($style)"
 
-[rlang]
-symbol = "󰟔 "
+[docker_context]
+symbol = ""
+style = "fg:#89b4fa"
+format = "[ $symbol $context]($style)"
 
-[ruby]
-symbol = " "
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#585b70"
+format = " [$time]($style)"
+
+[os]
+disabled = true
 
 [rust]
-symbol = "󱘗 "
+disabled = true
 
 [scala]
-symbol = " "
+disabled = true
 
-[swift]
-symbol = " "
+[c]
+disabled = true
 
-[zig]
-symbol = " "
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
 
 [gradle]
-symbol = " "
+disabled = true
+
+[haskell]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[nim]
+disabled = true

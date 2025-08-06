@@ -2,6 +2,39 @@
 
 set -euo pipefail
 
+echo "==> Installing core packages..."
+yay -S --noconfirm \
+pacseek \
+zoxide \
+fzf \
+unzip \
+zsh \
+starship \
+atuin \
+eza \
+acpi \
+playerctl \
+zsh-autosuggestions \
+zsh-syntax-highlighting \
+zsh-history-substring-search
+
+sudo pacman -S --noconfirm \
+dunst \
+libnotify \
+wget \
+waybar \
+wl-clipboard \
+xdg-desktop-portal-hyprland \
+xdg-desktop-portal \
+brightnessctl \
+pavucontrol \
+tmux \
+slurp \
+grim \
+hyprlock \
+pamixer
+
+
 if [ "$EUID" -eq 0 ]; then
     echo "❌ Do not run this script as root or with sudo."
     echo "Run it as your normal user. The script will ask for sudo when needed."

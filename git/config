@@ -1,6 +1,6 @@
 [user]
 	email = ayushdumasia00@gmail.com
-	name = Ayush Dumasia
+	name = "Ayush "
 
 [core]
   editor = vim
@@ -121,3 +121,8 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
