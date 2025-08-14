@@ -1,6 +1,6 @@
 [user]
 	email = ayushdumasia00@gmail.com
-	name = "Ayush "
+	name = "Ayush"
 
 [core]
   editor = vim
@@ -116,10 +116,10 @@
 [gpg "ssh"]
 	  program = ssh-keygen
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [filter "lfs"]
 	clean = git-lfs clean -- %f
