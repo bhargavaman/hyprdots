@@ -1,30 +1,35 @@
-local set = vim.opt
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
-set.shiftwidth = 2
-set.tabstop = 2
-set.softtabstop = 2
-set.expandtab = true
-set.autoindent = true
-set.number = true
-set.relativenumber = true
-set.clipboard = "unnamedplus"
-set.splitright = true
-set.splitbelow = true
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>", { desc = "Source file" })
-vim.keymap.set("n", "<leader>cs", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
-vim.keymap.set("n", "<leader>ww", "<cmd>set wrap!<CR>", { desc = "Toggle word wrap" })
-vim.keymap.set("n", "<leader>lb", "<cmd>set linebreak!<CR>", { desc = "Toggle linebreak" })
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+vim.g.lazyvim_check_order = false
+-- Load configuration
+require("lazy").setup({
+	spec = {
+		{
+			import = "plugins",
+		},
+		{
+			import = "plugins.ui",
+		},
+		{
+			import = "plugins.utils",
+		},
+		{
+			import = "plugins.dev",
+		},
+		{
+			import = "plugins.git",
+		},
+	},
 })
-
-require("config.lazy")
+require("options")
