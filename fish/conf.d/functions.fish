@@ -7,22 +7,31 @@ function open
 
     set SESSION_NAME (basename "$PROJECT_DIR")
 
-    code "$PROJECT_DIR"
     cd "$PROJECT_DIR"
 
     if tmux has-session -t "$SESSION_NAME" ^/dev/null
         tmux attach-session -t "$SESSION_NAME"
-    else
-        tmux new-session -d -s "$SESSION_NAME" -n main -c "$PROJECT_DIR"
-        tmux new-window -t "$SESSION_NAME":1 -n worker1 -c "$PROJECT_DIR"
-        tmux new-window -t "$SESSION_NAME":2 -n worker2 -c "$PROJECT_DIR"
-        tmux new-window -t "$SESSION_NAME":3 -n logs -c "$PROJECT_DIR"
-        tmux new-window -t "$SESSION_NAME":4 -n logs -c "$PROJECT_DIR"
-        tmux select-window -t "$SESSION_NAME":1
-        tmux attach-session -t "$SESSION_NAME"
+        return
     end
-end
 
+    # Create session + main window
+    tmux new-session -d -s "$SESSION_NAME" -n main -c "$PROJECT_DIR"
+
+    # Worker windows
+    tmux new-window -t "$SESSION_NAME":1 -n worker1 -c "$PROJECT_DIR"
+    tmux new-window -t "$SESSION_NAME":2 -n worker1 -c "$PROJECT_DIR"
+    # tmux new-window -t "$SESSION_NAME":2 -n worker2 -c "$PROJECT_DIR" "nvim $PROJECT_DIR"
+
+    # Logs windows
+    # tmux new-window -t "$SESSION_NAME":3 -n logs -c "$PROJECT_DIR" yazi
+    tmux new-window -t "$SESSION_NAME":3 -n worker1 -c "$PROJECT_DIR"
+    tmux new-window -t "$SESSION_NAME":4 -n logs -c "$PROJECT_DIR"
+
+    # Start on worker1
+    tmux select-window -t "$SESSION_NAME":1
+
+    tmux attach-session -t "$SESSION_NAME"
+end
 
 function wall
     gowall convert ~/Pictures/Wallpaper/$argv[1] -t catppuccin
@@ -33,12 +42,10 @@ function ms
     chmod +x "$argv[1]"
 end
 
-
-
 function edit
-    code ~/.config/$argv[1]
+    cd ~/.config/$argv[1]
+    nvim
 end
-
 
 function cpcf
     set file (fzf --query="$argv[1]" --preview 'bat --color=always {}' --preview-window 'right:60%' --bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up')
@@ -51,11 +58,9 @@ function cpcf
     end
 end
 
-
 function mount_gdrive
     rclone mount gdrive: ~/mnt/gdrive
 end
-
 
 function backup_dots
     exec syncAll.sh
@@ -115,7 +120,6 @@ function c
     cd "$argv[1]"
     ls
 end
-
 
 function music
     xdg-open https://music.youtube.com/

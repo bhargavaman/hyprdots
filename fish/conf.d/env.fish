@@ -4,7 +4,7 @@ set -Ux PATH $PATH /opt/kafka/bin
 set -Ux PATH $HOME/.config/rofi/scripts $PATH
 set PATH $HOME/.cargo/bin/ $PATH
 # set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -Ux EDITOR nvim
+set EDITOR nvim
 set -Ux PATH $HOME/go/bin $PATH
 
 

@@ -31,7 +31,8 @@ function gh-visibility
 end
 
 
-function gh_open
-    set repo (basename (pwd))
-    xdg-open "https://github.com/ad1822/$repo"
+function gh-open
+    gh browse
+    # set repo (basename (pwd))
+    # xdg-open "https://github.com/ad1822/$repo"
 end
