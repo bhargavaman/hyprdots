@@ -3,7 +3,6 @@ abbr -a gco 'git checkout'
 
 abbr -a vim nvim
 abbr -a kls 'kubectl get all'
-abbr -a jump 'nvim (fzf -m --preview="bat --color=always {}")'
 abbr -a ls 'eza -l --icons --level=1 --tree --git --color=always --sort=Name'
 abbr -a search 'eval "~/.local/bin/search.sh"'
 abbr -a cod 'code .'

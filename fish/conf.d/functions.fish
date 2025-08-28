@@ -1,37 +1,37 @@
-function open
-    if test -z "$argv[1]" -o "$argv[1]" = "."
-        set PROJECT_DIR (pwd)
-    else
-        set PROJECT_DIR "$argv[1]"
-    end
-
-    set SESSION_NAME (basename "$PROJECT_DIR")
-
-    cd "$PROJECT_DIR"
-
-    if tmux has-session -t "$SESSION_NAME" ^/dev/null
-        tmux attach-session -t "$SESSION_NAME"
-        return
-    end
-
-    # Create session + main window
-    tmux new-session -d -s "$SESSION_NAME" -n main -c "$PROJECT_DIR"
-
-    # Worker windows
-    tmux new-window -t "$SESSION_NAME":1 -n worker1 -c "$PROJECT_DIR"
-    tmux new-window -t "$SESSION_NAME":2 -n worker1 -c "$PROJECT_DIR"
-    # tmux new-window -t "$SESSION_NAME":2 -n worker2 -c "$PROJECT_DIR" "nvim $PROJECT_DIR"
-
-    # Logs windows
-    # tmux new-window -t "$SESSION_NAME":3 -n logs -c "$PROJECT_DIR" yazi
-    tmux new-window -t "$SESSION_NAME":3 -n worker1 -c "$PROJECT_DIR"
-    tmux new-window -t "$SESSION_NAME":4 -n logs -c "$PROJECT_DIR"
-
-    # Start on worker1
-    tmux select-window -t "$SESSION_NAME":1
-
-    tmux attach-session -t "$SESSION_NAME"
-end
+# function open
+#     if test -z "$argv[1]" -o "$argv[1]" = "."
+#         set PROJECT_DIR (pwd)
+#     else
+#         set PROJECT_DIR "$argv[1]"
+#     end
+#
+#     set SESSION_NAME (basename "$PROJECT_DIR")
+#
+#     cd "$PROJECT_DIR"
+#
+#     if tmux has-session -t "$SESSION_NAME" ^/dev/null
+#         tmux attach-session -t "$SESSION_NAME"
+#         return
+#     end
+#
+#     # Create session + main window
+#     tmux new-session -d -s "$SESSION_NAME" -n main -c "$PROJECT_DIR"
+#
+#     # Worker windows
+#     tmux new-window -t "$SESSION_NAME":1 -n worker1 -c "$PROJECT_DIR"
+#     tmux new-window -t "$SESSION_NAME":2 -n worker1 -c "$PROJECT_DIR"
+#     # tmux new-window -t "$SESSION_NAME":2 -n worker2 -c "$PROJECT_DIR" "nvim $PROJECT_DIR"
+#
+#     # Logs windows
+#     # tmux new-window -t "$SESSION_NAME":3 -n logs -c "$PROJECT_DIR" yazi
+#     tmux new-window -t "$SESSION_NAME":3 -n worker1 -c "$PROJECT_DIR"
+#     tmux new-window -t "$SESSION_NAME":4 -n logs -c "$PROJECT_DIR"
+#
+#     # Start on worker1
+#     tmux select-window -t "$SESSION_NAME":1
+#
+#     tmux attach-session -t "$SESSION_NAME"
+# end
 
 function wall
     gowall convert ~/Pictures/Wallpaper/$argv[1] -t catppuccin

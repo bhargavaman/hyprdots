@@ -1,9 +1,10 @@
 function fish_greeting
     # fastfetch
-    misfortune
+    # misfortune
+    wakafetch-sqlite heatmap
 end
 
-# fish_vi_key_bindings
+fish_vi_key_bindings
 set -g fish_autosuggestion_enabled 1
 # set -gx TERM xterm-256color
 
@@ -28,5 +29,3 @@ source ~/.config/fish/conf.d/functions.fish
 source ~/.config/fish/conf.d/abbr.fish
 source ~/.config/fish/conf.d/env.fish
 source ~/.config/fish/conf.d/gdr.fish
-
-# fastfetch
