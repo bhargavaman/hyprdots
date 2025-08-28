@@ -129,19 +129,19 @@ return {
 				end,
 				header = random_ascii(),
 				keys = {
-					--					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-					-- {
-					-- 	icon = " ",
-					-- 	key = "g",
-					-- 	desc = "Find Text",
-					-- 	action = ":lua Snacks.dashboard.pick('live_grep')",
-					-- },
-					--					{
-					-- 	icon = " ",
-					-- 	key = "r",
-					-- 	desc = "Recent Files",
-					-- 	action = ":lua Snacks.dashboard.pick('oldfiles')",
-					-- },
+					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+					{
+						icon = " ",
+						key = "g",
+						desc = "Find Text",
+						action = ":lua Snacks.dashboard.pick('live_grep')",
+					},
+					{
+						icon = " ",
+						key = "r",
+						desc = "Recent Files",
+						action = ":lua Snacks.dashboard.pick('oldfiles')",
+					},
 					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
 					{ icon = "?", key = "SPACE", desc = "Help", action = "lua require('which-key').show()" },
 					{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.picker.projects()" },
@@ -150,29 +150,36 @@ return {
 			sections = {
 				{ pane = 1, section = "header" },
 				{ pane = 1, section = "keys", indent = 1, gap = 1, padding = 1 },
-				function()
-					local in_git = Snacks.git.get_root() ~= nil
-					if not in_git then
-						return {}
-					end
-					return {
-						{
-							pane = 1,
-							icon = " ",
-							title = "Git Status  ",
-							section = "terminal",
-							enabled = function()
-								return Snacks.git.get_root() ~= nil
-							end,
-							cmd = "git status --short --branch --renames",
-							height = 5,
-							padding = 1,
-							ttl = 5 * 60,
-							indent = 3,
-						},
-					}
-				end,
-				{ pane = 1, section = "startup", padding = 0 },
+				-- {
+				-- 	pane = 1,
+				-- 	section = "terminal",
+				-- 	cmd = "wakafetch -H",
+				-- 	-- width = 100, -- 100 columns wide
+				-- 	-- height = 30, -- 30 rows tall
+				-- },
+				-- function()
+				-- 	local in_git = Snacks.git.get_root() ~= nil
+				-- 	if not in_git then
+				-- 		return {}
+				-- 	end
+				-- 	return {
+				-- 		{
+				-- 			pane = 1,
+				-- 			icon = " ",
+				-- 			title = "Git Status  ",
+				-- 			section = "terminal",
+				-- 			enabled = function()
+				-- 				return Snacks.git.get_root() ~= nil
+				-- 			end,
+				-- 			cmd = "git status --short --branch --renames",
+				-- 			height = 5,
+				-- 			padding = 1,
+				-- 			ttl = 5 * 60,
+				-- 			indent = 3,
+				-- 		},
+				-- 	}
+				-- end,
+				-- { pane = 1, section = "startup", padding = 0 },
 			},
 		},
 	},

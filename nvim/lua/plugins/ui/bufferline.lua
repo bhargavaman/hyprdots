@@ -3,8 +3,17 @@ return {
 	enabled = true,
 	opts = {
 		options = {
+			offsets = {
+				{
+					filetype = "snacks_layout_box",
+					highlight = "catppuccin",
+					text = " File Explorer",
+					text_align = "left",
+					separator = true,
+				},
+			},
 			mode = "buffers",
-			separator_style = "slant",
+			-- separator_style = "slant",
 			diagnostics = "nvim_lsp",
 			diagnostics_update_on_event = true,
 			hover = {
