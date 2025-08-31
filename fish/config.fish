@@ -29,3 +29,5 @@ source ~/.config/fish/conf.d/functions.fish
 source ~/.config/fish/conf.d/abbr.fish
 source ~/.config/fish/conf.d/env.fish
 source ~/.config/fish/conf.d/gdr.fish
+
+set -Ux FISH_PROFILE_STARTUP 1

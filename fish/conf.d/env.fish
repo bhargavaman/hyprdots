@@ -6,12 +6,12 @@ set -Ux PATH $HOME/.config/rofi/scripts $PATH
 set PATH $HOME/.cargo/bin/ $PATH
 # set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
 set EDITOR nvim
-set -Ux PATH $HOME/go/bin $PATH
 
 # Fd
-set -Ux FD_DEFAULT_OPTS "--hidden --exclude .git --exclude node_modules --exclude .cache"
+# set -Ux FD_DEFAULT_OPTS "--hidden --exclude .git --exclude node_modules --exclude .cache"
 
 # Fzf
+
 set -Ux FZF_DEFAULT_OPTS "--height 80% --layout=reverse --border rounded --info=inline --color=bg+:#181825,fg+:#cdd6f4,prompt:#89b4fa,pointer:#f38ba8"
 
 set -Ux FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS --preview 'bat --style=numbers --color=always {} | head -200'"
