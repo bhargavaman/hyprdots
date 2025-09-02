@@ -28,6 +28,12 @@
   <img src="Assets/powermenu.png" alt="powermenu" width="49%"/>
 </div>
 
+
+<div align="center">
+  <img src="Assets/wallpicker.png" alt="wallpaper rofi" width="49%"/>
+  <img src="Assets/git-fzf.png" alt="git-fzf" width="49%"/>
+</div>
+
 <div align="center">
   <img src="Assets/obs-cava.png" alt="cava" width="100%"/>
 </div>
@@ -41,7 +47,7 @@
 </div>
 
 <div align="center">
-  <img src="Assets/vscode.png" alt="vscode" width="100%"/>
+  <img src="Assets/nvim.png" alt="nvim" width="100%"/>
 </div>
 
 <div align="center">
