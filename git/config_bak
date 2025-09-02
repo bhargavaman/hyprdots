@@ -92,14 +92,21 @@
 
 [alias]
     st = status
+    ss = status -s
+    ci = commit
     co = checkout
     br = branch -a
     aa = add -A
     ap = add --patch
-    df = diff
+    cdf = clean -df
 
+    lo = log --oneline
     l = log --all --graph --decorate --oneline --abbrev-commit --date=short
+    r = remote
     conf = config --global --edit
+    df = diff
+    structure = log --oneline --simplify-by-decoration --graph --all
+    slog = log --pretty=format:'%C(auto)%h %C(red)%as %C(blue)%aN%C(auto)%d%C(green) %s'
     s5 = slog -5 --graph
     s10 = slog -10
 

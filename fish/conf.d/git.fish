@@ -9,12 +9,12 @@ function add
     git add --patch
 end
 
-function commit
-    bash ~/work/main/dotsh/gh/commit
-end
+# function commit
+#     bash ~/work/main/dotsh/gh/commit
+# end
 
 function push
-  git push
+    git push
 end
 
 function tag
@@ -29,7 +29,6 @@ end
 function gh-visibility
     gh repo edit --accept-visibility-change-consequences --visibility "$argv[1]"
 end
-
 
 function gh-open
     gh browse

@@ -1,34 +1,23 @@
-# feat: ✨ 
-# feat: 🔍 
-# feat: 🔗 
-# feat: 🔒 
+# <type>(<scope>): <short summary>
 
-# fix: 🐛 
-# fix: 🐞 
-# fix: 🩹 
-# fix: 🚑️ 
+# feat: 
 
-# style: 💅 
-# style: 🎨 
-# style: 💄 
+# fix: 
 
-# ci: 🦊 
-# ci: 📦 
+# style: 
 
-# deploy: 🚀 
-# deploy: 📦 
+# ci: 
 
-# chore: 🧹 
-# chore: 🔧 
-# chore: ⚙️ 
-# docs: 📜 
+# deploy: 
 
-# refactor: 🔨 
-# perf: 🚀 
+# chore: 
 
-# test: 🚦 
-# debug: 🧪 
+# refactor: 
 
-# BREAKING CHANGE: 🚨 
-# BREAKING CHANGE: 💥 
-# BREAKING CHANGE: 💣 
+# perf: 
+
+# test: 
+
+# debug: 
+
+# BREAKING CHANGE: 

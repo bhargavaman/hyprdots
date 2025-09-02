@@ -39,9 +39,9 @@ style = 'bold dimmed green'
 [battery]
 disabled = false
 format = " [$symbol$percentage ]($style)"
-full_symbol = "󰁹 "
-discharging_symbol = "󰂃 "
-charging_symbol = "󰂄 "
+full_symbol = "󱊢 "
+discharging_symbol = " "
+charging_symbol = "󱊥 "
 unknown_symbol = "󰁽 "
 empty_symbol = "󰂎 "
 

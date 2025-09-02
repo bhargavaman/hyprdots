@@ -71,11 +71,11 @@
     //   "key": "   Display  ",
     //   "keyColor": "cyan"
     // },
-    {
-      "type": "cpu",
-      "key": "   CPU      ",
-      "keyColor": "blue"
-    },
+    // {
+    //   "type": "cpu",
+    //   "key": "   CPU      ",
+    //   "keyColor": "blue"
+    // },
     // {
     //   "type": "gpu",
     //   "key": "   GPU      ",
