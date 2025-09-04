@@ -1,7 +1,7 @@
 function fish_greeting
     # fastfetch
     # misfortune
-    wakafetch-sqlite heatmap
+    # wakafetch-sqlite heatmap
 end
 
 fish_vi_key_bindings
