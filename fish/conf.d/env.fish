@@ -6,6 +6,7 @@ set -Ux PATH $HOME/.config/rofi/scripts $PATH
 set PATH $HOME/.cargo/bin/ $PATH
 # set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
 set EDITOR nvim
+set BROWSER zen-browser
 
 # Fd
 # set -Ux FD_DEFAULT_OPTS "--hidden --exclude .git --exclude node_modules --exclude .cache"

@@ -40,8 +40,8 @@ style = 'bold dimmed green'
 disabled = false
 format = " [$symbol$percentage ]($style)"
 full_symbol = "󱊢 "
-discharging_symbol = " "
-charging_symbol = "󱊥 "
+discharging_symbol = "󱊢 "
+charging_symbol = "󰂄 "
 unknown_symbol = "󰁽 "
 empty_symbol = "󰂎 "
 
