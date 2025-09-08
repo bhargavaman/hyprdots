@@ -56,7 +56,7 @@
 
 ## Wallpapers (Google Drive)
 
-[Wallpapers](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
+[Wallpapers](https://drive.google.com/drive/folders/1Q1j-Qzx1cU1X8j4xUPrssxn1rgJSnDQO)
 
 ---
 
