@@ -905,8 +905,8 @@ return {
 	config = function(_, opts)
 		require("snacks").setup(opts)
 		-- Set 5 lines for scrolling
-		vim.keymap.set("n", "<C-d>", "5<C-d>", { noremap = true, silent = true })
-		vim.keymap.set("n", "<C-u>", "5<C-u>", { noremap = true, silent = true })
+		vim.keymap.set("n", "<C-d>", "5<C-d>zz", { noremap = true, silent = true })
+		vim.keymap.set("n", "<C-u>", "5<C-u>zz", { noremap = true, silent = true })
 
 		-- Enable dim by default
 		-- Snacks.toggle.dim():set(true)
