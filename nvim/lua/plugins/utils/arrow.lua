@@ -7,7 +7,7 @@ return {
 	},
 	opts = {
 		show_icons = true,
-		leader_key = "gg", -- Recommended to be a single key
+		leader_key = "rr",
 		buffer_leader_key = "m", -- Per Buffer Mappings
 		index_keys = "jklzxcv",
 	},
