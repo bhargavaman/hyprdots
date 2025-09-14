@@ -21,6 +21,7 @@ end
 atuin init fish | source
 starship init fish | source
 zoxide init fish --cmd cd | source
+carapace _carapace | source
 
 source ~/.config/fish/conf.d/git.fish
 source ~/.config/fish/conf.d/functions.fish
