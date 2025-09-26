@@ -46,7 +46,7 @@ unknown_symbol = "󰁽 "
 empty_symbol = "󰂎 "
 
 [[battery.display]]
-threshold = 70
+threshold = 100
 style = "fg:#f9e2af"
 
 [username]

@@ -9,9 +9,10 @@ abbr -a cod 'code .'
 
 # Tmux
 abbr -a t 'tmux new -s '
-abbr -a tt 'tmux a -t'
+abbr -a tt 'tmux attach-session -t'
 abbr -a fbat 'fzf --preview \'bat --style=numbers --color=always --line-range :500 {}\''
 
+abbr -a cAll 'killall waybar hyprpaper hypridle'
 abbr -a seek pacseek
 abbr -a y yazi
 abbr -a ci cdi

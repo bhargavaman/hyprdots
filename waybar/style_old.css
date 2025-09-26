@@ -1,7 +1,7 @@
 @import 'mocha.css';
 
 * {
-  font-family: JetBrains Mono Nerd Font;
+  font-family: Iosevka Nerd Font;
   min-height: 14px;
   font-size: 12px;
   border: none;
@@ -34,7 +34,7 @@ menu,
 #workspaces {
   background: @mantle;
   margin: 0;
-  margin-left: 3px;
+ margin-left: 3px;
   padding: 0;
   font-weight: bold;
   font-style: normal;
