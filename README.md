@@ -20,30 +20,30 @@
 </p> -->
 
 <div align="center">
-  <img src="Assets/main-2.png" alt="main" width="100%"/>
+  <img src="Assets/main.png" alt="main" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="Assets/new-launcher.png" alt="launcher" width="49%"/>
+  <img src="Assets/launcher.png" alt="launcher" width="49%"/>
   <img src="Assets/powermenu.png" alt="powermenu" width="49%"/>
 </div>
 
 
 <div align="center">
   <img src="Assets/wallpicker.png" alt="wallpaper rofi" width="49%"/>
-  <img src="Assets/git-fzf.png" alt="git-fzf" width="49%"/>
+  <img src="Assets/gitlog.png" alt="git log" width="49%"/>
 </div>
 
 <div align="center">
-  <img src="Assets/obs-cava.png" alt="cava" width="100%"/>
+  <img src="Assets/nvim-obs.png" alt="obs nvim" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="Assets/player-2.png" alt="player" width="100%"/>
+  <img src="Assets/player.png" alt="player" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="Assets/new-btop.png" alt="btop" width="100%"/>
+  <img src="Assets/btop.png" alt="btop" width="100%"/>
 </div>
 
 <div align="center">
@@ -51,8 +51,19 @@
 </div>
 
 <div align="center">
-  <img src="Assets/yazi-2.png" alt="yazi" width="100%"/>
+  <img src="Assets/github.png" alt="github" width="100%"/>
 </div>
+
+<div align="center">
+  <img src="Assets/yazi.png" alt="yazi" width="100%"/>
+</div>
+
+#### My old rice
+
+Change branch of this repo to `old-dotfiles` 
+```bash
+git checkout old-dotfiles
+```
 
 ## Wallpapers (Google Drive)
 
