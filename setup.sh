@@ -2,41 +2,41 @@
 
 set -euo pipefail
 
-# echo "==> Installing core packages..."
+echo "==> Installing core packages..."
 
-# yay -S --noconfirm \
-#   pacseek \
-#   zoxide \
-#   fzf \
-#   unzip \
-#   starship \
-#   atuin \
-#   eza \
-#   acpi \
-#   playerctl
-#
-# sudo pacman -S --noconfirm \
-#   dunst \
-#   libnotify \
-#   ttf-iosevka-nerd \
-#   wget \
-#   waybar \
-#   wl-clipboard \
-#   xdg-desktop-portal-hyprland \
-#   xdg-desktop-portal \
-#   brightnessctl \
-#   pavucontrol \
-#   tmux \
-#   slurp \
-#   grim \
-#   hyprlock \
-#   pamixer
-#
-# if [ "$EUID" -eq 0 ]; then
-#   echo "❌ Do not run this script as root or with sudo."
-#   echo "Run it as your normal user. The script will ask for sudo when needed."
-#   exit 1
-# fi
+yay -S --noconfirm \
+  pacseek \
+  zoxide \
+  fzf \
+  unzip \
+  starship \
+  atuin \
+  eza \
+  acpi \
+  playerctl
+
+sudo pacman -S --noconfirm \
+  dunst \
+  libnotify \
+  ttf-iosevka-nerd \
+  wget \
+  waybar \
+  wl-clipboard \
+  xdg-desktop-portal-hyprland \
+  xdg-desktop-portal \
+  brightnessctl \
+  pavucontrol \
+  tmux \
+  slurp \
+  grim \
+  hyprlock \
+  pamixer
+
+if [ "$EUID" -eq 0 ]; then
+  echo "❌ Do not run this script as root or with sudo."
+  echo "Run it as your normal user. The script will ask for sudo when needed."
+  exit 1
+fi
 
 # Text colors
 RED="\e[31m"
@@ -452,11 +452,11 @@ setup_other_things() {
 cecho CYAN "==> Creating wallpaper directory..."
 mkdir -p "$HOME/Pictures/Wallpaper"
 
-# setup_yay
-# setup_hypr
-# setup_waybar
-# setup_dunst
-# setup_yazi
-# setup_rofi
-# setup_fish
-# setup_other_things
+setup_yay
+setup_hypr
+setup_waybar
+setup_dunst
+setup_yazi
+setup_rofi
+setup_fish
+setup_other_things
