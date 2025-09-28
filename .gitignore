@@ -1,3 +1,4 @@
 *hyprpaper.conf
 rclone/
 *rclone.conf
+!bin/
