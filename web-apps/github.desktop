@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Github
+Comment=Github
+Exec=zen-browser https://github.com/ad1822
+Terminal=false
+Type=Application
+Icon=/home/ad/.local/share/applications/icons/github.png
+StartupNotify=true

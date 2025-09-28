@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Music
+Comment=Music
+Exec=zen-browser https://music.youtube.com/
+Terminal=false
+Type=Application
+Icon=/home/ad/.local/share/applications/icons/music.png
+StartupNotify=true

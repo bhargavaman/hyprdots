@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Whatsapp
+Comment=Whatsapp
+Exec=zen-browser web.whatsapp.com/
+Terminal=false
+Type=Application
+Icon=/home/ad/.local/share/applications/icons/whatsapp.png
+StartupNotify=true
