@@ -17,7 +17,8 @@
 
 ## Fonts
 
-- **Fonts**: JetBrains Mono Nerd Fonts
+- **Fonts**: Iosevka Nerd Fonts
+- **Fonts**: JetBrains Mono Nerd Fonts (old)
 
 ## Audio
 

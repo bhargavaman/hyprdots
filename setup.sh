@@ -2,41 +2,41 @@
 
 set -euo pipefail
 
-echo "==> Installing core packages..."
+# echo "==> Installing core packages..."
 
-yay -S --noconfirm \
-  pacseek \
-  zoxide \
-  fzf \
-  unzip \
-  starship \
-  atuin \
-  eza \
-  acpi \
-  playerctl
-
-sudo pacman -S --noconfirm \
-  dunst \
-  libnotify \
-  ttf-iosevka-nerd \
-  wget \
-  waybar \
-  wl-clipboard \
-  xdg-desktop-portal-hyprland \
-  xdg-desktop-portal \
-  brightnessctl \
-  pavucontrol \
-  tmux \
-  slurp \
-  grim \
-  hyprlock \
-  pamixer
-
-if [ "$EUID" -eq 0 ]; then
-  echo "❌ Do not run this script as root or with sudo."
-  echo "Run it as your normal user. The script will ask for sudo when needed."
-  exit 1
-fi
+# yay -S --noconfirm \
+#   pacseek \
+#   zoxide \
+#   fzf \
+#   unzip \
+#   starship \
+#   atuin \
+#   eza \
+#   acpi \
+#   playerctl
+#
+# sudo pacman -S --noconfirm \
+#   dunst \
+#   libnotify \
+#   ttf-iosevka-nerd \
+#   wget \
+#   waybar \
+#   wl-clipboard \
+#   xdg-desktop-portal-hyprland \
+#   xdg-desktop-portal \
+#   brightnessctl \
+#   pavucontrol \
+#   tmux \
+#   slurp \
+#   grim \
+#   hyprlock \
+#   pamixer
+#
+# if [ "$EUID" -eq 0 ]; then
+#   echo "❌ Do not run this script as root or with sudo."
+#   echo "Run it as your normal user. The script will ask for sudo when needed."
+#   exit 1
+# fi
 
 # Text colors
 RED="\e[31m"
@@ -368,7 +368,7 @@ setup_yay() {
 setup_fish() {
   local BACKUP_DIR="$HOME/.config_backup"
   local EXISTING_CONFIG="$HOME/.config/fish"
-  local NEW_CONFIG_SOURCE="$HOME/fishdots/fish"
+  local NEW_CONFIG_SOURCE="$HOME/hyprdots/fish"
 
   read -p $'\e[34mDo you want to set up Fish shell config (y/n): \e[0m' ans
 
@@ -427,7 +427,7 @@ setup_other_things() {
   fi
 
   CONFIGS="cava kitty fastfetch pacseek hypridle starship"
-  BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
+  BACKUP_DIR="$HOME/.config_backup"
 
   cecho GREEN "==> Backing up and replacing config files..."
   mkdir -p "$BACKUP_DIR" || {
@@ -449,25 +449,14 @@ setup_other_things() {
   cecho GREEN "All selected configs processed. Backup saved at: $BACKUP_DIR"
 }
 
-setup_fish_shell() {
-  read -p $'\e[34mDo you want install and set fish shell as a default shell? (y/n): \e[0m' ans
-  if [[ "$ans" != "y" ]]; then
-    cecho RED "Skipped fish configs setup."
-    return
-  fi
-
-  sudo pacman -S fish --noconfirm
-  mkdir -p "$BACKUP_DIR"
-}
-
 cecho CYAN "==> Creating wallpaper directory..."
 mkdir -p "$HOME/Pictures/Wallpaper"
 
-setup_yay
-setup_hypr
-setup_waybar
-setup_dunst
-setup_yazi
-setup_rofi
-setup_other_things
-
+# setup_yay
+# setup_hypr
+# setup_waybar
+# setup_dunst
+# setup_yazi
+# setup_rofi
+# setup_fish
+# setup_other_things
