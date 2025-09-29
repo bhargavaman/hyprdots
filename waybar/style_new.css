@@ -1,13 +1,14 @@
 @import 'mocha.css';
 
 * {
-  background-color: @mantle;
+  background-color: @crust;
   color: @text;
   border: none;
   border-radius: 0;
   min-height: 0;
   font-family: Iosevka Nerd Font;
   font-size: 12px;
+  font-weight : 600;
 }
 
 
@@ -103,6 +104,13 @@ tooltip {
   margin-right : 10px;
 }
 
+#custom-transparency {
+  font-size : 15px;
+  margin-right : 8;
+  color: @green;
+}
+
+
 #custom-gh{
   margin-right: 10px;
   margin-left: 10px;
@@ -117,7 +125,7 @@ tooltip {
 
 #temperature.gpu {
   color: @text;
-  border-radius: 6px;
+  margin-left : 6px;
 }
 #backlight{
   color : @lavender;

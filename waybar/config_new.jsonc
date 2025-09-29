@@ -8,10 +8,12 @@
   "modules-center": ["clock"],
   "modules-right": [
     // "custom/wallpaper",
+    "custom/transparency",
+    "custom/seperator",
     "temperature#gpu",
     "custom/seperator",
-    // "custom/gh",
-    // "custom/seperator",
+    "custom/gh",
+    "custom/seperator",
     "backlight",
     "custom/seperator",
     "wireplumber",
@@ -22,6 +24,13 @@
   ],
   "custom/seperator" : {
     "format" : "<span>|</span>"
+  },
+
+  "custom/transparency": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/toggle-trans.sh",
+    "format-alt": " "
   },
   "temperature#gpu": {
     "thermal-zone": 5,
