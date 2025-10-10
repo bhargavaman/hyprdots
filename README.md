@@ -1,4 +1,4 @@
-<h1 align="center">🫟 Hyprdots</h1>
+<h1 align="center">Hyprdots</h1>
 
 <div align="center">
 <p>
