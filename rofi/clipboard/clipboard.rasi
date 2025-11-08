@@ -6,7 +6,7 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font: "Iosevka Nerd Font 10";
-    background:                  #11111b;
+    background:                 #181825 ;
     background-alt:              #313244;
     foreground:                  #eff1f5;
     selected:                    #cba6f7;

@@ -65,7 +65,7 @@ aliases = { "arch" = "arch" }
 style = "fg:#94e2d5"
 format = " [$path]($style)"
 truncate_to_repo = false
-truncation_length = 1
+truncation_length = 2
 fish_style_pwd_dir_length = 1
 use_logical_path = true
 
