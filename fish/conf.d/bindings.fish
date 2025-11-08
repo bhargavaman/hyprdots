@@ -1,5 +1,5 @@
 # Emacs-style bindings (standard)
-fish_default_key_bindings
+# fish_default_key_bindings
 
 # Ctrl+P / Ctrl+N → command history search
 bind \cp history-search-backward
