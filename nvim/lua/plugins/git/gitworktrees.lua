@@ -1,7 +1,6 @@
--- todo : will delete this
 return {
 	"ThePrimeagen/git-worktree.nvim",
-	enabled = false,
+	enabled = true,
 	dependencies = { "nvim-telescope/telescope.nvim" },
 	config = function()
 		require("git-worktree").setup({

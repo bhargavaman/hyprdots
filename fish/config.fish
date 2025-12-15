@@ -1,5 +1,6 @@
 function fish_greeting
-    fastfetch
+    # fastfetch
+    wakafetch-sqlite heatmap
 end
 
 fish_vi_key_bindings
@@ -18,10 +19,11 @@ if not functions -q fisher
     fish -c fisher
 end
 
-atuin init fish | source
+# atuin init fish | source
 starship init fish | source
 zoxide init fish --cmd cd | source
-carapace _carapace | source
+
+source ~/.config/fish/conf.d/z99_atuin.fish
 
 source ~/.config/fish/conf.d/git.fish
 source ~/.config/fish/conf.d/functions.fish

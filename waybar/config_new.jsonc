@@ -8,6 +8,7 @@
   "modules-center": ["clock"],
   "modules-right": [
     // "custom/wallpaper",
+    // "custom/seperator",
     "custom/transparency",
     "custom/seperator",
     "temperature#gpu",
@@ -87,17 +88,17 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span color='#a6e3a1' font='Font Awesome 6 Free-Solid'></span>  {usage}%",
+    "format": "<span color='#89b4fa' font='Font Awesome 6 Free-Solid'></span>  {usage}%",
     "on-click": "kitty btop"
   },
   "memory": {
     "interval": 1,
-    "format": " <span color='#a6e3a1' font='Font Awesome 6 Free'>󰄫</span>  {percentage}%",
+    "format": " <span color='#89b4fa' font='Font Awesome 6 Free'></span>  {percentage}%",
     "on-click": "kitty btop",
     "tooltip-format": "{used}/{total} GiB"
   },
   "custom/wallpaper": {
-    "format": "\uf03e",
+    "format": " <span  font='Font Awesome 6 Free'>󰸉</span>",
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
     "tooltip": false,
     "on-click-right": "kitty -e ~/.config/waybar/scripts/select-wallpaper.sh"
@@ -134,19 +135,6 @@
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
     "tooltip": false,
     "on-click-right": "kitty -e ~/.config/waybar/scripts/select-wallpaper.sh"
-  },
-  "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 3,
-    "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
   },
   "battery": {
     "format": "{icon} {capacity}%",

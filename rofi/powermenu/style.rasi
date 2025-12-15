@@ -79,7 +79,7 @@ element {
     enabled: true;
     padding: 10px;
     border-radius: 2px;
-    background-color: #313244;
+    background-color: @background;
     text-color: #cdd6f4;
     cursor: pointer;
 }

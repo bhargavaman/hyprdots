@@ -48,7 +48,7 @@ inputbar {
     background-color:            transparent;
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "dummy", "entry" ];
+    children:                    [  "entry" ];
 }
 
 dummy {
@@ -58,9 +58,9 @@ dummy {
 entry {
     enabled:                     true;
     expand:                      false;
-    width:                       280px;
+    width:                       365px;
     padding:                     12px 16px 8px 16px;
-    border-radius:               8px;
+    border-radius:               6px;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;

@@ -93,13 +93,12 @@
 [alias]
     st = status
     co = checkout
-    br = branch -a
     aa = add -A
     ap = add --patch
     df = diff
 
     l = log --all --graph --decorate --oneline --abbrev-commit --date=short
-    conf = config --global --edit
+    ; conf = config --global --edit
     s5 = slog -5 --graph
     s10 = slog -10
 

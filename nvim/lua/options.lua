@@ -10,6 +10,13 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
+vim.api.nvim_create_autocmd("BufNewFile", {
+	pattern = "*.go",
+	callback = function()
+		vim.cmd("0r ~/.config/nvim/templates/go_main.go")
+	end,
+})
+
 local function toggleTrueFalse()
 	local word = vim.fn.expand("<cword>")
 	if word == "true" then

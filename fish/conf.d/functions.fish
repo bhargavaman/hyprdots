@@ -124,3 +124,18 @@ end
 function music
     xdg-open https://music.youtube.com/
 end
+
+function goInit
+    if test (count $argv) -eq 0
+        echo "Usage: goInit <directory-name>"
+        return 1
+    end
+
+    set dir $argv[1]
+    mkdir -p $dir
+    cd $dir
+    go mod init $dir
+    touch main.go
+    go mod tidy
+    nvim
+end
