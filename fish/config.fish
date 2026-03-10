@@ -1,6 +1,6 @@
 function fish_greeting
     # fastfetch
-    wakafetch-sqlite heatmap
+    # wakafetch-sqlite heatmap
 end
 
 fish_vi_key_bindings
@@ -30,5 +30,13 @@ source ~/.config/fish/conf.d/functions.fish
 source ~/.config/fish/conf.d/abbr.fish
 source ~/.config/fish/conf.d/env.fish
 source ~/.config/fish/conf.d/gdr.fish
+# ~/.config/fish/config.fish
+leadr --fish | source
 
 set -Ux FISH_PROFILE_STARTUP 1
+
+thefuck --alias | source
+
+function my_after_command --on-event fish_postexec
+    # echo "Command finished at (date)"
+end
