@@ -43,15 +43,15 @@ return {
 			custom_highlights = function()
 				return {
 					-- Custom background (mantle) color
-					Normal = { bg = "#11111b" },
-					NormalNC = { bg = "#11111b" },
-					NormalFloat = { bg = "#11111b" },
-					FloatBorder = { fg = "#45475a", bg = "#11111b" },
+					Normal = { bg = "#0b0c14" },
+					NormalNC = { bg = "#0b0c14" },
+					NormalFloat = { bg = "#0b0c14" },
+					FloatBorder = { fg = "#45475a", bg = "#0b0c14" },
 
 					CursorLine = { bg = "#1a1a24" },
 					CursorColumn = { bg = "#1a1a24" },
 
-					-- Visual = { bg = "#a6e3a1", fg = "#11111b" },
+					-- Visual = { bg = "#a6e3a1", fg = "#0b0c14" },
 
 					ErrorMsg = { fg = "#f38ba8", bold = true },
 					WarningMsg = { fg = "#f9e2af", bold = true },
@@ -62,8 +62,8 @@ return {
 					GitSignsChange = { fg = "#f9e2af" },
 					GitSignsDelete = { fg = "#f38ba8" },
 
-					BlinkCmpMenu = { bg = "#11111b" },
-					BlinkCmpDoc = { bg = "#11111b" },
+					BlinkCmpMenu = { bg = "#0b0c14" },
+					BlinkCmpDoc = { bg = "#0b0c14" },
 				}
 			end,
 			default_integrations = true,
