@@ -1,4 +1,4 @@
-#!/bin/bash
+j!/bin/bash
 
 WALL_DIR="$HOME/Pictures/Wallpaper"
 

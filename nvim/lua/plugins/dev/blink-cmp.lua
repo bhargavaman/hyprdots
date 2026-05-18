@@ -15,9 +15,11 @@ return {
 				["<Tab>"] = { "select_next", "fallback" },
 				["<S-Tab>"] = { "select_prev", "fallback" },
 				["<CR>"] = { "accept", "fallback" },
-				["<C-Space>"] = {
+				["<C-o>"] = {
 					function(cmp)
-						cmp.show({ providers = { "snippets" } })
+						cmp.show({
+							providers = { "lsp", "snippets", "path", "buffer" },
+						})
 					end,
 				},
 				["<C-e>"] = { "cancel", "fallback" },

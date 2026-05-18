@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "json", "jsonc", "markdown", "text" },
 	callback = function()
-		vim.wo.conceallevel = 1
+		vim.wo.conceallevel = 0
 	end,
 })
 
@@ -15,6 +15,29 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 	callback = function()
 		vim.cmd("0r ~/.config/nvim/templates/go_main.go")
 	end,
+})
+
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+-- 	pattern = "*.js",
+-- 	command = "vert split | terminal node %",
+-- })
+
+vim.diagnostic.config({
+	virtual_text = {
+		format = function(diagnostic)
+			local bufname = vim.api.nvim_buf_get_name(diagnostic.bufnr or 0)
+
+			-- Check if file is inside /modules/
+			if bufname:match("/modules/") then
+				-- Filter specific Terraform LSP warnings
+				if diagnostic.message:match("required_providers") or diagnostic.message:match("required_version") then
+					return nil
+				end
+			end
+
+			return diagnostic.message
+		end,
+	},
 })
 
 local function toggleTrueFalse()

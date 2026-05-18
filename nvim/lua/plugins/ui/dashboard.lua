@@ -1,5 +1,6 @@
 local ascii_arts = {
 	[[
+
                                                                              
                ████ ██████           █████      ██                     
               ███████████             █████                             
@@ -111,6 +112,7 @@ end
 
 return {
 	"snacks.nvim",
+	enabled = true,
 	opts = {
 		dashboard = {
 			preset = {

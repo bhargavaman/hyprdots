@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "position": "top",
   "margin-left": 3,
   "margin-right": 3,
   "margin-top": 2,
@@ -7,8 +8,10 @@
   "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
   "modules-center": ["clock"],
   "modules-right": [
-    "hyprland/window",
-    "custom/gh",
+    // "custom/cava",
+    // "hyprland/submap",
+    // "hyprland/window",
+    // "custom/gh",
     "temperature#gpu",
     "custom/transparency",
     "custom/wallpaper",
@@ -17,112 +20,119 @@
     "network",
     "battery"
   ],
-  "custom/gh": {
-    "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits DARK",
-    "return-type": "json",
-    "interval": 2400,
-    "tooltip": true,
-    "on-click": "xdg-open https://github.com/ad1822",
-    "on-click-right": "~/.config/waybar/scripts/weekly_commits DARK"
+// vim: set ft=jsonc:
+"hyprland/submap": {
+  "format": "<span size='11000' foreground='#F8B471'> </span>{}",
+  "max-length": 20,
+  "tooltip": false,
+  "on-click": "hyprctl dispatch submap reset",
+},
+"custom/gh": {
+  "exec": "sleep 1 & ~/.config/waybar/scripts/weekly_commits DARK",
+  "return-type": "json",
+  "interval": 2400,
+  "tooltip": true,
+  "on-click": "xdg-open https://github.com/ad1822",
+  "on-click-right": "~/.config/waybar/scripts/weekly_commits DARK"
+},
+"hyprland/window": {
+  "format": "{initialClass}",
+  "icon": true,
+  "icon-size": 19,
+  "seperate-outputs": true,
+  "rewrite": {
+    "": "  Arch",
+    "Mozilla Firefox": "Firefox",
+    "(.*) Thunar": "Thunar",
+    "(.*)obs(.*)": "OBS",
+    "Spotify (.*)": "Spotify",
+    "discord(.*)": "Discord",
+    "Code": "VS Code",
+    "Docker Desktop": " Docker",
+    "kitty": "Kitty",
+    "zen": "Zen"
   },
-  "hyprland/window": {
-    "format": "{initialClass}",
-    "icon": true,
-    "icon-size": 19,
-    "seperate-outputs": true,
-    "rewrite": {
-      "": "  Arch",
-      "Mozilla Firefox": "Firefox",
-      "(.*) Thunar": "Thunar",
-      "(.*)obs(.*)": "OBS",
-      "Spotify (.*)": "Spotify",
-      "discord(.*)": "Discord",
-      "Code": "VS Code",
-      "Docker Desktop": " Docker",
-      "kitty": "Kitty",
-      "zen": "Zen"
-    },
-    "on-click-middle": "pkill waybar && hyprctl dispatch exec waybar"
-  },
-  "custom/cava": {
-    "format": "{}",
-    "exec": "~/.config/waybar/scripts/cava.sh",
-    "on-click": "kitty cava"
-  },
-  "custom/update": {
-    "format": "{}",
-    "exec": "~/.config/waybar/scripts/check-updates.sh"
+  "on-click-middle": "pkill waybar && hyprctl dispatch exec waybar"
+},
+"custom/cava": {
+  "format": "{}",
+  "exec": "~/.config/waybar/scripts/cava.sh",
+  "on-click": "kitty cava"
+},
+"custom/update": {
+  "format": "{}",
+  "exec": "~/.config/waybar/scripts/check-updates.sh"
     // "on-click": "kitty cava"
+},
+"temperature#gpu": {
+  "thermal-zone": 5,
+  "critical-threshold": 80,
+  "format-critical": "{temperatureC}°C ",
+  "format": "{temperatureC}°C ",
+  "tooltip": false
+},
+"backlight": {
+  "device": "intel_backlight",
+  "scroll-step": 5,
+  "format": "{icon}",
+  "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
+  "tooltip": true,
+  "tooltip-format": "{percent}%"
+},
+"network#speed": {
+  "interval": 1,
+  "format": "{ifname}%%",
+  "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+  "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+  "format-disconnected": "󰌙",
+  "tooltip-format": "{ipaddr}",
+  "format-linked": "󰈁 {ifname} (No IP)",
+  "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+  "tooltip-format-ethernet": "{ifname} 󰌘",
+  "tooltip-format-disconnected": "󰌙 Disconnected",
+  "max-length": 22,
+  "min-length": 20,
+  "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+},
+"custom/launcher": {
+  "format": "",
+  "tooltip": false,
+  "on-click": "~/.config/rofi/launcher/launcher.sh"
+},
+"custom/transparency": {
+  "format": " ",
+  "tooltip": false,
+  "on-click": "~/.config/waybar/scripts/toggle-trans.sh",
+  "format-alt": " "
+},
+"cpu": {
+  "interval": 1,
+  "format": "{usage}% <span font='Font Awesome 6 Free-Solid'>\uf2db</span>",
+  "on-click": "ghostty -e btop"
+},
+"memory": {
+  "interval": 1,
+  "format": "{percentage}% <span font='Font Awesome 5 Free'>\uf538</span>",
+  "on-click": "ghostty -e btop",
+  "tooltip-format": "{used}/{total} GiB"
+},
+"hyprland/workspaces": {
+  "all-outputs": true,
+  "warp-on-scroll": true,
+  "enable-bar-scroll": true,
+  "disable-scroll-wraparound": false,
+  "format": " {icon} ",
+  "format-icons": {
+    "active": "●",
+    "default": "●"
   },
-  "temperature#gpu": {
-    "thermal-zone": 5,
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C ",
-    "tooltip": false
+  "persistent-workspaces": {
+    "*": 4
   },
-  "backlight": {
-    "device": "intel_backlight",
-    "scroll-step": 5,
-    "format": "{icon}",
-    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
-    "tooltip": true,
-    "tooltip-format": "{percent}%"
-  },
-  "network#speed": {
-    "interval": 1,
-    "format": "{ifname}%%",
-    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
-    "format-disconnected": "󰌙",
-    "tooltip-format": "{ipaddr}",
-    "format-linked": "󰈁 {ifname} (No IP)",
-    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-    "tooltip-format-ethernet": "{ifname} 󰌘",
-    "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 22,
-    "min-length": 20,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  },
-  "custom/launcher": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "~/.config/rofi/launcher/launcher.sh"
-  },
-  "custom/transparency": {
-    "format": " ",
-    "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/toggle-trans.sh",
-    "format-alt": " "
-  },
-  "cpu": {
-    "interval": 1,
-    "format": "{usage}% <span font='Font Awesome 6 Free-Solid'>\uf2db</span>",
-    "on-click": "kitty btop"
-  },
-  "memory": {
-    "interval": 1,
-    "format": "{percentage}% <span font='Font Awesome 5 Free'>\uf538</span>",
-    "on-click": "kitty btop",
-    "tooltip-format": "{used}/{total} GiB"
-  },
-  "hyprland/workspaces": {
-    "all-outputs": true,
-    "warp-on-scroll": true,
-    "enable-bar-scroll": true,
-    "disable-scroll-wraparound": false,
-    "format": " {icon} ",
-    "format-icons": {
-      "active": "●",
-      "default": "●"
-    },
-    "persistent-workspaces": {
-      "*": 4
-    },
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1"
-  },
+  "on-click": "activate",
+  "on-scroll-up": "hyprctl dispatch workspace e-1",
+  "on-scroll-down": "hyprctl dispatch workspace e+1"
+},
   // "hyprland/workspaces": {
   //   "all-outputs": true,
   //   "active-only": false,

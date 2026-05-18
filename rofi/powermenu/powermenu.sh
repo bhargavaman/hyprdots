@@ -1,103 +1,60 @@
 #!/usr/bin/env bash
 
-# Current Theme
-dir="$HOME/.config/rofi/powermenu/"
-theme='style'
+set -euo pipefail
 
-# CMDs
-uptime="`uptime -p | sed -e 's/up //g' | sed -e 's/hour/hr/g' | sed -e 's/minute/min/g'`"
+# ── Config ──────────────────────────────────────────────────────────
+ROFI_DIR="$HOME/.config/rofi/powermenu"
+THEME="style"
 
-# # Options
-# hibernate=' hibernate'
-# shutdown=' Shutdown'
-# reboot='⟳ Reboot'
-# lock=' Lock'
-# suspend=' Suspend'
-# logout=' Logout'
-# yes=' Yes'
-# no=' No'
-# Options
-hibernate='Hibernate'
-shutdown='Shutdown'
-reboot='Reboot'
-lock='Lock'
-suspend='Suspend'
-logout='Logout'
-yes='yes'
-no='no'
+UPTIME="$(uptime -p |
+  sed 's/up //; s/hours\?/hr/g; s/minutes\?/min/g')"
 
-# Rofi CMD
-rofi_cmd() {
-	rofi -dmenu \
-		-p " $USER" \
-		-mesg " Uptime: $uptime" \
-		-theme ${dir}/${theme}.rasi
+# ── Options ─────────────────────────────────────────────────────────
+declare -A ACTIONS=(
+  ["Shutdown"]="hyprshutdown -t 'Shutting Down...' --post-cmd 'shutdown -P 0'"
+  ["Reboot"]="hyprshutdown -t 'Rebooting...' --post-cmd 'reboot -P 0'"
+  ["Logout"]="hyprshutdown -t 'Loging Out... ' --post-cmd 'logout -P 0'"
+)
+
+LOCK_CMD=""
+
+[[ -n "$LOCK_CMD" ]] && ACTIONS["Lock"]="$LOCK_CMD"
+
+# ── Rofi Helpers ────────────────────────────────────────────────────
+rofi_menu() {
+  rofi -dmenu \
+    -p " $USER" \
+    -mesg "󰥔 Uptime: $UPTIME" \
+    -theme "${ROFI_DIR}/${THEME}.rasi"
 }
 
-# Confirmation CMD
-confirm_cmd() {
-	rofi -markup-rows -dmenu \
-		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
-		-theme ${dir}/confirmation.rasi
+confirm_menu() {
+  rofi -dmenu \
+    -p "Confirmation" \
+    -mesg "Are you sure?" \
+    -theme "${ROFI_DIR}/confirmation.rasi"
 }
 
-# Ask for confirmation
-confirm_exit() {
-	echo -e "<span foreground='#a6e3a1'>$yes</span>\n<span foreground='#f38ba8'>$no</span>" | confirm_cmd
+confirm() {
+  local answer
+
+  answer=$(
+    printf "Yes\nNo" | confirm_menu
+  )
+
+  [[ "$answer" == "Yes" ]]
 }
 
-# Pass variables to rofi dmenu
-run_rofi() {
-	echo -e "$shutdown\n$reboot\n$lock\n$suspend\n$hibernate\n$logout" | rofi_cmd
-}
+# ── Main Menu ───────────────────────────────────────────────────────
+chosen=$(
+  printf '%s\n' "${!ACTIONS[@]}" |
+    sort |
+    rofi_menu
+)
 
-# Execute Command
-run_cmd() {
-	selected="$(confirm_exit)"
-	echo "$selected"
-	if [[ "$selected" =~ "$yes" ]]; then
-		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
-		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
-		elif [[ $1 == '--hibernate' ]]; then
-			systemctl suspend
-		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
-		elif [[ $1 == '--logout' ]]; then
-      hyprctl dispatch exit
-  	fi
-	else
-		exit 0
-	fi
-}
+[[ -z "${chosen:-}" ]] && exit 0
 
-# Actions
-chosen="$(run_rofi)"
-case ${chosen} in
-    $shutdown)
-		run_cmd --shutdown
-        ;;
-    $reboot)
-		run_cmd --reboot
-        ;;
-    $hibernate)
-		run_cmd --hibernate
-        ;;
-    $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
-        ;;
-    $suspend)
-		run_cmd --suspend
-        ;;
-    $logout)
-		run_cmd --logout
-        ;;
-esac
+# ── Execute ─────────────────────────────────────────────────────────
+if confirm; then
+  eval "${ACTIONS[$chosen]}"
+fi

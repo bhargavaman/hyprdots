@@ -28,4 +28,3 @@ elif [[ -n $choice ]]; then
 else
   exit
 fi
-
