@@ -9,3 +9,9 @@ hl.config({
 		disable_splash_rendering = false,
 	},
 })
+
+hl.gesture({
+	fingers = 4,
+	direction = "swipe",
+	action = "workspace",
+})

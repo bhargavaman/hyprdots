@@ -22,6 +22,7 @@
 
 [init]
   defaultBranch = dev
+	templateDir = /home/ad/.git-templates/git-secrets
 
 [diff]
     context = 3
@@ -101,6 +102,7 @@
     ; conf = config --global --edit
     s5 = slog -5 --graph
     s10 = slog -10
+	gl = log --graph --oneline --all
 
 # [gpg]
 # 	format = opengpg

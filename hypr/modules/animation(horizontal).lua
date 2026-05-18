@@ -44,7 +44,7 @@ hl.animation({
 	leaf = "windowsIn",
 	enabled = true,
 	speed = 4,
-	bezier = "motion",
+	bezier = "fade",
 	style = "popin 92%",
 })
 
@@ -120,9 +120,9 @@ hl.animation({
 hl.animation({
 	leaf = "layersOut",
 	enabled = true,
-	speed = 6,
+	speed = 10,
 	bezier = "fade",
-	style = "fade",
+	style = "slide",
 })
 
 -- ── Workspaces ───────────────────────────────────────────────────

@@ -15,6 +15,17 @@ local function bindDsp(modifier, key, dispatcher)
 	hl.bind(modifier .. " + " .. key, dispatcher)
 end
 
+-- Scrolling layout binds using native dispatchers
+hl.bind(mod .. " + equal", hl.dsp.layout("colresize +0.1"))
+hl.bind(mod .. " + minus", hl.dsp.layout("colresize -0.1"))
+hl.bind(mod .. " + comma", hl.dsp.layout("swapcol l"))
+hl.bind(mod .. " + period", hl.dsp.layout("swapcol r"))
+
+-- bind = $mainMod, equal, layoutmsg, colresize +0.1
+-- bind = $mainMod, minus, layoutmsg, colresize -0.1
+-- bind = $mainMod, comma, layoutmsg, swapcol l
+-- bind = $mainMod, period, layoutmsg, swapcol r
+
 -- ── Apps ─────────────────────────────────────────────────────────
 bind(mod, "T", vars.terminal)
 bind(mod, "E", vars.terminal .. " -e " .. vars.fileManager)
@@ -76,8 +87,8 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("sh -c 'brightnessctl set +2% && 
 
 -- ── Window Controls ──────────────────────────────────────────────
 bindDsp(mod, "W", hl.dsp.window.close())
-bindDsp(mod, "G", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 bindDsp(mod, "F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+bindDsp(mod, "G", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 bindDsp(mod, "V", hl.dsp.window.float({ action = "toggle" }))
 
 -- bindDsp("ALT", "Tab", hl.dsp.window.focus_cycle({ direction = "next" }))
