@@ -391,23 +391,23 @@ setup_fish() {
   fi
 
   setup_wakafetch() {
-  read -p $'\e[34mDo you want to install wakafetch-sqlite (y/n): \e[0m' ans
-  if [[ "$ans" != "y" ]]; then
-    cecho RED "Skipped wakafetch-sqlite setup."
-    return
-  fi
+    read -p $'\e[34mDo you want to install wakafetch-sqlite (y/n): \e[0m' ans
+    if [[ "$ans" != "y" ]]; then
+      cecho RED "Skipped wakafetch-sqlite setup."
+      return
+    fi
 
-  cecho GREEN "Installing wakafetch-sqlite..."
+    cecho GREEN "Installing wakafetch-sqlite..."
 
-  if wget -q "https://raw.githubusercontent.com/ad1822/wakafetch-sqlite/dev/wakafetch-sqlite" -O /tmp/wakafetch-sqlite; then
-    sudo mv /tmp/wakafetch-sqlite /usr/bin/wakafetch-sqlite
-    sudo chmod +x /usr/bin/wakafetch-sqlite
-    cecho GREEN "wakafetch-sqlite installation complete"
-  else
-    cecho RED "wakafetch-sqlite installation failed. Aborting"
-    return 1
-  fi
-}
+    if wget -q "https://raw.githubusercontent.com/ad1822/wakafetch-sqlite/dev/wakafetch-sqlite" -O /tmp/wakafetch-sqlite; then
+      sudo mv /tmp/wakafetch-sqlite /usr/bin/wakafetch-sqlite
+      sudo chmod +x /usr/bin/wakafetch-sqlite
+      cecho GREEN "wakafetch-sqlite installation complete"
+    else
+      cecho RED "wakafetch-sqlite installation failed. Aborting"
+      return 1
+    fi
+  }
 
   # Backup existing config
   mkdir -p "$BACKUP_DIR"
