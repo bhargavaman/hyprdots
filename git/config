@@ -2,7 +2,7 @@
 	email = ayushdumasia00@gmail.com
 	name = Ayush
 	# signingkey = "/home/ad/.ssh/github.pub"
-  signingkey = FD04E87E0C168A6A
+  signingkey = 0xFCE6F2D287F2AE98
 
 [core]
   editor = vim
@@ -24,7 +24,6 @@
 
 [init]
   defaultBranch = dev
-	templateDir = /home/ad/.git-templates/git-secrets
 
 [diff]
     context = 3

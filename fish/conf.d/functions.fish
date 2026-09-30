@@ -118,3 +118,11 @@ function homelab
         popd
     end
 end
+
+function go-to-rdr2-wallpaper
+    sudo ntfs-3g /dev/nvme0n1p3 /windows
+    pushd /windows/Users/rx/Pictures/RDR2 Photos
+    yazi
+    popd
+    sudo umount /windows
+end

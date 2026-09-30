@@ -132,7 +132,7 @@
   },
   "memory": {
     "interval": 1,
-    "format": " <span color='#89b4fa' font='Font Awesome 5 Free'></span>  {percentage}%",
+    "format": " <span color='#89b4fa' font='Font Awesome 5 Free'></span>  {percentage}%",
     "on-click": "kitty btop",
     "tooltip-format": "{used}/{total} GiB"
   },
