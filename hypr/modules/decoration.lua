@@ -1,7 +1,7 @@
 hl.config({
 	decoration = {
 		dim_special = 0.2,
-		rounding = 0,
+		rounding = 10,
     active_opacity = 1,
     inactive_opacity = 1,
 		blur = {
@@ -15,13 +15,12 @@ hl.config({
 			special = true,
 		},
 		shadow = {
-			enabled = false,
-			range = 300,
-			render_power = 3,
-			color = "rgba(1a1a1aaf)",
-			offset = "10 10",
+			enabled = true,
+			range = 200,
+			render_power = 4,
+			color = "rgba(00000066)",
+			offset = { 0, -10 },
 			-- scale = 0.95,
-			-- ignore_window = true,
 		},
 	},
 })

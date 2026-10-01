@@ -22,7 +22,7 @@ end
 # atuin init fish | source
 starship init fish | source
 zoxide init fish --cmd cd | source
-kubectl completion fish | source
+# kubectl completion fish | source
 
 # source ~/.config/fish/conf.d/z99_atuin.fish
 
@@ -31,13 +31,10 @@ source ~/.config/fish/conf.d/functions.fish
 source ~/.config/fish/conf.d/abbr.fish
 source ~/.config/fish/conf.d/env.fish
 source ~/.config/fish/conf.d/gdr.fish
+source ~/.config/fish/conf.d/automation.fish
 # ~/.config/fish/config.fish
 leadr --fish | source
 
 set -Ux FISH_PROFILE_STARTUP 1
 
 thefuck --alias | source
-
-function my_after_command --on-event fish_postexec
-    # echo "Command finished at (date)"
-end

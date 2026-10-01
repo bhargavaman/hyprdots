@@ -1,8 +1,8 @@
 hl.config({
 	general = {
 		gaps_in = 3,
-		gaps_out = 6,
-		border_size = 1,
+		gaps_out = 20,
+		border_size = 0,
 		col = {
 			active_border = {
 				colors = {
@@ -25,11 +25,9 @@ hl.config({
 		layout = "scrolling",
 	},
 
-	scrolling = {
-		focus_fit_method = 1,
-		explicit_column_widths = "0.5,1",
-		direction = "left",
-	},
+	-- scrolling = {
+	-- 	column_width = 0.49,
+	-- },
 	dwindle = {
 		-- pseudotile = true
 		preserve_split = true,

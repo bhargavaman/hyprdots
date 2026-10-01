@@ -33,6 +33,8 @@ abbr -a dcup "docker compose up"
 abbr -a dc docker
 abbr -a rm "rm -i"
 
+# abbr -a ssh "kitten ssh"
+
 # abbr -a awsr "aws $1 --profile root"
 # abbr -a homelab-start "cd /home/ad/work/side/homelab && docker compose up -d && firefox localhost:3737"
 # abbr -a homelab-close "cd /home/ad/work/side/homelab && docker compose down"

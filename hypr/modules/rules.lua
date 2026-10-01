@@ -55,3 +55,11 @@ windowRule("hyprland-dialog", "4", true)
 windowRule("mpv", "4", true)
 windowRule("Docker Desktop", "4", true)
 windowRule("GitKraken", "4", true)
+
+-- Quickshell right-side bar popups animate themselves (grow out of the bar);
+-- Hyprland's layer slide on top of that overshoots them downward.
+hl.layer_rule({
+	name = "no-anim-quickshell-panels",
+	match = { namespace = "^omarchy-keyboard-panel" },
+	no_anim = true,
+})

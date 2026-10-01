@@ -5,9 +5,9 @@ SETUVAR --export CARAPACE_BRIDGES:zsh\x2cfish\x2cbash\x2cinshellisense
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FD_DEFAULT_OPTS:\x2d\x2dhidden\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dexclude\x20node_modules\x20\x2d\x2dexclude\x20\x2ecache
 SETUVAR --export FISH_PROFILE_STARTUP:1
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dheight\x2080\x25\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder\x20rounded\x20\x2d\x2dinfo\x3dinline\x20\x2d\x2dcolor\x3dbg\x3a\x23101315\x2cbg\x2b\x3a\x23101315\x2cfg\x3a\x23cacccc\x2cfg\x2b\x3a\x23a5aeb4\x20\x2d\x2dcolor\x3dhl\x3a\x23565d60\x2chl\x2b\x3a\x23565d60\x2cheader\x3a\x23565d60\x2cinfo\x3a\x23798186\x2cprompt\x3a\x23798186\x20\x2d\x2dcolor\x3dpointer\x3a\x23a5aeb4\x2cmarker\x3a\x235d6367\x2cspinner\x3a\x23a5aeb4\x2cselected\x2dbg\x3a\x23101315\x20\x2d\x2dcolor\x3dborder\x3a\x234b4e55\x2clabel\x3a\x23cacccc\x20\x2d\x2dpreview\x20\x27bat\x20\x2d\x2dstyle\x3dnumbers\x20\x2d\x2dcolor\x3dalways\x20\x7b\x7d\x20\x7c\x20head\x20\x2d200\x27
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dheight\x2080\x25\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder\x20rounded\x20\x2d\x2dinfo\x3dinline\x20\x2d\x2dcolor\x3dbg\x2b\x3a\x230b0c14\x3a\x2cfg\x2b\x3a\x23cdd6f4\x2cprompt\x3a\x2389b4fa\x2cpointer\x3a\x23f38ba8\x20\x2d\x2dpreview\x20\x27bat\x20\x2d\x2dstyle\x3dnumbers\x20\x2d\x2dcolor\x3dalways\x20\x7b\x7d\x20\x7c\x20head\x20\x2d200\x27
 SETUVAR --export FZF_TMUX:1
-SETUVAR --export --path PATH:/home/ad/\x2econfig/rofi/scripts\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2econfig/acheron/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/work/main/dotsh/misc\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/omarchy/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
+SETUVAR --export --path PATH:/home/ad/\x2econfig/rofi/scripts\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/work/main/dotsh/misc\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/home/ad/\x2ecargo/bin/\x1e/home/ad/go/bin\x1e/home/ad/\x2elocal/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR --export STARSHIP_CONFIG:/home/ad/\x2econfig/starship/starship\x2etoml
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
@@ -23,35 +23,5 @@ SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_f
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1epatrickf1/fzf\x2efish\x1ecatppuccin/fish\x1ejethrokuan/z\x1eremmercier/fish\x2daws
 SETUVAR _fisher_remmercier_2F_fish_2D_aws_files:\x7e/\x2econfig/fish/functions/_aws_clear_state\x2efish\x1e\x7e/\x2econfig/fish/functions/_aws_update_state\x2efish\x1e\x7e/\x2econfig/fish/functions/acp\x2efish\x1e\x7e/\x2econfig/fish/functions/agp\x2efish\x1e\x7e/\x2econfig/fish/functions/agr\x2efish\x1e\x7e/\x2econfig/fish/functions/asp\x2efish\x1e\x7e/\x2econfig/fish/functions/asr\x2efish\x1e\x7e/\x2econfig/fish/functions/aws_profiles\x2efish\x1e\x7e/\x2econfig/fish/functions/aws_regions\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fish\x2daws\x2efish\x1e\x7e/\x2econfig/fish/completions/acp\x2efish\x1e\x7e/\x2econfig/fish/completions/asp\x2efish\x1e\x7e/\x2econfig/fish/completions/asr\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_color_autosuggestion:4b4e55
-SETUVAR fish_color_cancel:565d60
-SETUVAR fish_color_command:798186
-SETUVAR fish_color_comment:4b4e55
-SETUVAR fish_color_cwd:d9dbdc
-SETUVAR fish_color_cwd_root:565d60
-SETUVAR fish_color_end:d9dbdc
-SETUVAR fish_color_error:565d60
-SETUVAR fish_color_escape:d9dbdc
-SETUVAR fish_color_gray:4b4e55
-SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR fish_color_host:798186
-SETUVAR fish_color_host_remote:9fa5a9
-SETUVAR fish_color_keyword:565d60
-SETUVAR fish_color_normal:cacccc
-SETUVAR fish_color_operator:aeaeae
-SETUVAR fish_color_option:9fa5a9
-SETUVAR fish_color_param:cbc2be
-SETUVAR fish_color_quote:9fa5a9
-SETUVAR fish_color_redirection:aeaeae
-SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d101315
-SETUVAR fish_color_selection:\x2d\x2dbackground\x3d101315
-SETUVAR fish_color_status:565d60
-SETUVAR fish_color_user:707070
-SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_features:no\x2dkeyboard\x2dprotocols
-SETUVAR fish_pager_color_completion:cacccc
-SETUVAR fish_pager_color_description:4b4e55
-SETUVAR fish_pager_color_prefix:aeaeae
-SETUVAR fish_pager_color_progress:4b4e55
-SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d101315
-SETUVAR fish_user_paths:/home/ad/\x2econfig/acheron/bin\x1e/home/ad/omarchy/bin\x1e/home/ad/work/main/dotsh/misc
+SETUVAR fish_user_paths:/home/ad/work/main/dotsh/misc
